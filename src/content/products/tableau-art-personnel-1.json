@@ -1,0 +1,72 @@
+{
+  "title": {
+    "en": "Art Print — Personal Series 01",
+    "fr": "Tirage d'art — Série Personnelle 01"
+  },
+  "slug": "tableau-art-personnel-1",
+  "type": "print",
+  "categories": [
+    "Wall art"
+  ],
+  "description": {
+    "en": "Fine art print of an original personal illustration by Roddy AGBO. Archival quality on textured fine art paper.",
+    "fr": "Tirage d'art d'une illustration personnelle originale par Roddy AGBO. Impression de haute précision sur papier d'art texturé."
+  },
+  "details": {
+    "dimensions": "A3 (29.7 x 42 cm)",
+    "material": "Papier d'art 310g / m²",
+    "finish": "Mat satiné",
+    "year": "2024"
+  },
+  "variants": [
+    {
+      "name": {
+        "en": "Format A3",
+        "fr": "Format A3"
+      },
+      "priceXof": "[À REMPLIR]",
+      "sku": "PRINT-PERSO-01-A3",
+      "fedapayUrl": ""
+    }
+  ],
+  "currency": "XOF",
+  "availability": "coming-soon",
+  "fulfillment": {
+    "method": "print-on-demand",
+    "provider": "[À CHOISIR]",
+    "productionDays": "[À REMPLIR]"
+  },
+  "edition": "open",
+  "stock": "",
+  "images": [
+    {
+      "src": "/images/products/print-01.svg",
+      "alt": {
+        "en": "Personal Art Print placeholder",
+        "fr": "Visuel du tirage d'art personnel"
+      },
+      "width": 800,
+      "height": 1000,
+      "ratio": "4:5"
+    }
+  ],
+  "relatedSeries": "Recherches personnelles",
+  "shippingProfile": "standard",
+  "checkout": {
+    "mode": "none",
+    "url": ""
+  },
+  "featured": false,
+  "order": 1,
+  "published": false,
+  "seo": {
+    "title": {
+      "en": "Art Print 01 — Roddy AGBO Shop",
+      "fr": "Tirage d'art 01 — Boutique Roddy AGBO"
+    },
+    "description": {
+      "en": "Fine art print from personal illustration work by Roddy AGBO.",
+      "fr": "Tirage d'art d'une illustration personnelle par Roddy AGBO."
+    }
+  }
+}

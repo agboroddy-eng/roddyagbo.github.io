@@ -1,0 +1,328 @@
+{
+  "en": {
+    "nav": {
+      "work": "Work",
+      "shop": "Shop",
+      "about": "About",
+      "contact": "Contact",
+      "services": "Services"
+    },
+    "hero": {
+      "tagline": "Illustrator & 2D Animator crafting characters, stories and visual worlds.",
+      "intro": "2D animator and visual artist based in Benin, specializing in comic book illustration and 2D animated film direction.",
+      "ctaProjects": "View my work",
+      "ctaContact": "Discuss a project",
+      "availability": "Based in Benin · Available for local assignments and remote collaborations"
+    },
+    "filters": {
+      "all": "All",
+      "illustration": "Illustration",
+      "animation": "2D Animation",
+      "storyboard": "Storyboard & Visual Development",
+      "artDirection": "Art Direction"
+    },
+    "gallery": {
+      "viewProject": "View project",
+      "empty": "No project found in this category."
+    },
+    "project": {
+      "contextTitle": "Context & Objectives",
+      "roleTitle": "My Role & Responsibilities",
+      "creditsTitle": "Credits & Production Team",
+      "processTitle": "Creative Process & Milestones",
+      "visualsTitle": "Visual Explorations",
+      "availableInShop": "Available in the shop",
+      "viewInShop": "View product in shop",
+      "allProjects": "All Projects",
+      "prevProject": "Previous project",
+      "nextProject": "Next project",
+      "discussSimilar": "Interested in collaborating on a similar project?",
+      "contactCta": "Get in touch",
+      "specsHeading": "Film Specifications",
+      "kitsuHeading": "Production Management & Kitsu Pipeline",
+      "storyboardHeading": "Storyboard & Color Script",
+      "decorsHeading": "Iconic Backgrounds & Cotonou Settings",
+      "soundtrackHeading": "Original Beninese Soundtrack",
+      "seriesHeading": "From Short Film to TV Series",
+      "dreamTeamHeading": "The Dream Team Crew",
+      "teaserNotice": "Festival distribution in progress • Private screener available on request"
+    },
+    "about": {
+      "title": "About Roddy AGBO",
+      "subtitle": "Illustrator, 2D animator, visual storyteller.",
+      "bio1": "Based in Cotonou, Benin, Roddy AGBO is an illustrator, author, and 2D animation director. A self-taught visual storyteller driven by narrative depth, his career took root in children’s publishing through impactful books such as Dona and Tom and Cybersecurity Explained to Children. In 2023, he contributed to the Educational Resources initiative and co-authored the Beninese Adventures collection.",
+      "bio2": "Eager to bring his worlds into motion, he joined the prestigious Incub’IMA Animation program in 2025 at Sèmè City, in partnership with Gobelins Paris. Within this high-level collective, he co-directed a landmark animated short film alongside five fellow filmmakers. Serving as production manager and 2D animator, he oversaw the production pipeline end-to-end and mastered animation film manufacturing from the inside.",
+      "bio3": "Whether crafting illustrated books or orchestrating animated film pipelines, Roddy pursues a meaningful vision: telling authentic, contemporary African stories with global resonance, while actively contributing to building a sustainable animation industry across the African continent.",
+      "skillsTitle": "Key Disciplines",
+      "skill1": "2D Animation & Rough Animation",
+      "skill2": "Storyboard & Cinematic Animatic",
+      "skill3": "Character Design & Visual Development",
+      "skill4": "Children's Book & Editorial Illustration",
+      "locationLabel": "Location",
+      "locationValue": "Benin, West Africa (available for remote collaborations worldwide)",
+      "contactPrompt": "Want to discuss a production or book project?",
+      "softwareTitle": "Software & tools"
+    },
+    "contact": {
+      "title": "Let's work together",
+      "subtitle": "Have a film in pre-production, a book needing illustrations, or an inquiry about an artwork? Send a message.",
+      "form": {
+        "name": "Your name",
+        "email": "Your email address",
+        "projectType": "Project type",
+        "typeCollab": "Professional Collaboration (Studio / Agency / Publisher)",
+        "typeCommission": "Personal Commission",
+        "typeShop": "Shop & Artwork Question",
+        "typeOther": "Other inquiry",
+        "message": "Project details or message",
+        "sendMailto": "Send via Email",
+        "sendWhatsApp": "Discuss via WhatsApp",
+        "directNotice": "Clicking opens your mail software or WhatsApp with your pre-filled message directly. No data is stored on third-party servers."
+      },
+      "direct": {
+        "title": "Direct Contact",
+        "emailLabel": "Professional Email",
+        "whatsappLabel": "WhatsApp",
+        "locationLabel": "Base"
+      }
+    },
+    "shopSection": {
+      "title": "From the shop",
+      "subtitle": "Original prints and items created exclusively from personal illustrations.",
+      "viewAll": "Explore the shop",
+      "currencyNotice": "Prices are in West African CFA francs (XOF)",
+      "startingFrom": "from"
+    },
+    "badges": {
+      "available": "Available",
+      "comingSoon": "Coming soon",
+      "preOrder": "Pre-order",
+      "unavailable": "Unavailable",
+      "sold": "Sold",
+      "limited": "Limited Edition"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "crafted": "Designed for clean storytelling and fast loading.",
+      "contactMe": "Get in touch"
+    },
+    "a11y": {
+      "menuToggle": "Toggle navigation menu",
+      "languageToggle": "Switch language to French",
+      "skipToContent": "Skip to main content"
+    },
+    "shop": {
+      "title": "Shop & Artwork Prints",
+      "subtitle": "Original prints and items crafted exclusively from personal illustrations by Roddy AGBO.",
+      "filterAll": "All",
+      "filterWallArt": "Wall art",
+      "filterGoodies": "Goodies",
+      "filterBooks": "Books",
+      "sortBy": "Sort by",
+      "sortFeatured": "Featured",
+      "sortNewest": "Newest",
+      "empty": "No product available in this category.",
+      "buyNow": "Order via FedaPay",
+      "preOrderNow": "Pre-order via FedaPay",
+      "askQuestion": "Ask about this piece",
+      "detailsHeading": "Specifications & Craft",
+      "shippingHeading": "Fulfillment & Estimated Delivery",
+      "afterPaymentNotice": "After completing your FedaPay payment, you will be redirected to the order details page to enter your delivery address.",
+      "podNotice": "Print on demand: manufactured upon order confirmation to ensure pristine archival quality.",
+      "rightsNotice": "All rights reserved © Roddy AGBO. Purchasing an artwork does not transfer copyright or reproduction rights.",
+      "moreFromShop": "More from the shop",
+      "requestPurchase": "Request Purchase",
+      "selectVariant": "Select Option / Size",
+      "priceInXof": "Prices are in West African CFA francs (XOF)",
+      "productionTime": "Production time",
+      "shippingZones": "Shipping zones",
+      "prelaunchTitle": "Shop coming soon",
+      "prelaunchSubtitle": "The shop will soon feature prints, books and illustrated goods. Visuals and ordering information are currently being prepared."
+    },
+    "orderDetails": {
+      "title": "Order Delivery Details",
+      "subtitle": "Complete this form immediately after completing your FedaPay payment to submit your delivery address.",
+      "fedapayRef": "FedaPay Transaction ID / Reference",
+      "clientName": "Full Name",
+      "clientEmail": "Email Address",
+      "clientPhone": "Phone / WhatsApp Number",
+      "address": "Full Shipping Address (Street, City, Postal Code, Country)",
+      "notes": "Additional delivery notes (landmarks, specific instructions)",
+      "submit": "Submit Delivery Address",
+      "directNotice": "Your delivery details will be forwarded directly to Roddy AGBO to initiate fulfillment with the print provider."
+    },
+    "legal": {
+      "shippingTitle": "Shipping & Returns Policy",
+      "termsTitle": "Terms of Sale (CGV)",
+      "privacyTitle": "Privacy Policy",
+      "legalDisclaimer": "This is a provisional template. Please have it validated by a legal professional before commercial launch."
+    },
+    "services": {
+      "title": "How I can contribute to your project",
+      "subtitle": "From the first idea to the final images, I work across visual development, storytelling and production."
+    }
+  },
+  "fr": {
+    "nav": {
+      "work": "Projets",
+      "shop": "Boutique",
+      "about": "À propos",
+      "contact": "Contact",
+      "services": "Services"
+    },
+    "hero": {
+      "tagline": "Illustrateur et animateur 2D façonnant personnages, histoires et univers visuels.",
+      "intro": "Animateur 2D et artiste visuel basé au Bénin, spécialisé dans l'illustration de bande dessinée et la réalisation de film d'animation 2D.",
+      "ctaProjects": "Voir mes projets",
+      "ctaContact": "Parlons de votre projet",
+      "availability": "Basé au Bénin · Disponible pour missions locales et collaborations remote"
+    },
+    "filters": {
+      "all": "Tous",
+      "illustration": "Illustration",
+      "animation": "Animation 2D",
+      "storyboard": "Storyboard & Développement visuel",
+      "artDirection": "Direction artistique"
+    },
+    "gallery": {
+      "viewProject": "Découvrir le projet",
+      "empty": "Aucun projet trouvé dans cette catégorie."
+    },
+    "project": {
+      "contextTitle": "Contexte & Objectifs",
+      "roleTitle": "Mon rôle & mes responsabilités",
+      "creditsTitle": "Crédits & Équipe de fabrication",
+      "processTitle": "Processus de création & Étapes",
+      "visualsTitle": "Recherches visuelles & Détails",
+      "availableInShop": "Disponible dans la boutique",
+      "viewInShop": "Voir le produit dans la boutique",
+      "allProjects": "Tous les projets",
+      "prevProject": "Projet précédent",
+      "nextProject": "Projet suivant",
+      "discussSimilar": "Un projet similaire ou une collaboration en vue ?",
+      "contactCta": "Me contacter",
+      "specsHeading": "Fiche Technique du Film",
+      "kitsuHeading": "Direction de Production & Pipeline Kitsu",
+      "storyboardHeading": "Storyboard & Découpage Visuel",
+      "decorsHeading": "Décors Emblématiques & Ambiance de Cotonou",
+      "soundtrackHeading": "Musique Originale & Identité Béninoise",
+      "seriesHeading": "Du Court Métrage à la Série TV",
+      "dreamTeamHeading": "L'Équipe du Film (Dream Team)",
+      "teaserNotice": "Court métrage en circuit festivals • Démonstration privée disponible sur demande"
+    },
+    "about": {
+      "title": "À propos de Roddy AGBO",
+      "subtitle": "Illustrateur, animateur 2D, créateur d'univers visuels.",
+      "bio1": "Basé à Cotonou, au Bénin, Roddy AGBO est illustrateur, auteur et réalisateur d’animation 2D. Artiste autodidacte passionné par la puissance narrative de l’image, son parcours s’est d’abord affirmé dans l’édition jeunesse avec des ouvrages remarqués comme Dona et Tom et La cybersécurité expliquée aux enfants. En 2023, il participe au projet Ressources Éducatives et devient co-auteur de la collection Aventures béninoises.",
+      "bio2": "Poussé par la volonté de donner vie et mouvement à ses univers, il intègre en 2025 le programme d’excellence Incub’IMA Animation à Sèmè City, en partenariat avec les Gobelins Paris. Au sein de ce cadre de haut niveau, il co-réalise avec cinq autres créateurs un court métrage d’animation marquant. En cumulant les responsabilités de chargé de production et d’artiste animateur, il maîtrise la gestion du pipeline et appréhende l’industrie du cinéma d’animation de l’intérieur.",
+      "bio3": "Qu’il s’agisse d’illustrer un livre ou d’orchestrer une production animée, Roddy poursuit une vision engagée : raconter des récits africains contemporains, émouvants et universels, tout en contribuant activement à l’émergence d’une industrie pérenne du cinéma d’animation en Afrique.",
+      "skillsTitle": "Disciplines & Compétences",
+      "skill1": "Animation 2D & Rough animation",
+      "skill2": "Storyboard & Animatic séquentiel",
+      "skill3": "Character design & Développement visuel",
+      "skill4": "Illustration jeunesse & Bande dessinée",
+      "locationLabel": "Localisation",
+      "locationValue": "Bénin, Afrique de l'Ouest (disponible pour collaborations locales et internationales à distance)",
+      "contactPrompt": "Une production en préparation ou un livre à illustrer ?",
+      "softwareTitle": "Logiciels & outils"
+    },
+    "contact": {
+      "title": "Discutons de votre projet",
+      "subtitle": "Une production d'animation, un livre illustré ou une question sur une œuvre ? Envoyez-moi un message direct.",
+      "form": {
+        "name": "Votre nom",
+        "email": "Votre adresse e-mail",
+        "projectType": "Type de projet",
+        "typeCollab": "Collaboration professionnelle (Studio / Agence / Édition)",
+        "typeCommission": "Commission personnelle",
+        "typeShop": "Question sur la boutique & Tirages",
+        "typeOther": "Autre demande",
+        "message": "Détails de votre projet ou question",
+        "sendMailto": "Envoyer par e-mail",
+        "sendWhatsApp": "Échanger sur WhatsApp",
+        "directNotice": "Le clic ouvre directement votre messagerie ou WhatsApp avec votre texte prérempli. Aucune donnée n'est envoyée à un serveur tiers."
+      },
+      "direct": {
+        "title": "Coordonnées directes",
+        "emailLabel": "E-mail professionnel",
+        "whatsappLabel": "WhatsApp direct",
+        "locationLabel": "Ancrage"
+      }
+    },
+    "shopSection": {
+      "title": "De la boutique",
+      "subtitle": "Tirages originaux et objets dérivés issus exclusivement d'œuvres personnelles.",
+      "viewAll": "Accéder à la boutique",
+      "currencyNotice": "Les prix sont indiqués en francs CFA (XOF)",
+      "startingFrom": "à partir de"
+    },
+    "badges": {
+      "available": "Disponible",
+      "comingSoon": "Bientôt disponible",
+      "preOrder": "Précommande",
+      "unavailable": "Indisponible",
+      "sold": "Épuisé",
+      "limited": "Édition limitée"
+    },
+    "footer": {
+      "rights": "Tous droits réservés.",
+      "crafted": "Conçu pour une narration épurée et un chargement rapide.",
+      "contactMe": "Me contacter"
+    },
+    "a11y": {
+      "menuToggle": "Ouvrir ou fermer le menu",
+      "languageToggle": "Passer le site en anglais",
+      "skipToContent": "Passer au contenu principal"
+    },
+    "shop": {
+      "title": "Boutique & Tirages d'art",
+      "subtitle": "Tirages originaux et objets dérivés issus exclusivement des œuvres personnelles de Roddy AGBO.",
+      "filterAll": "Tous",
+      "filterWallArt": "Tableaux",
+      "filterGoodies": "Objets dérivés",
+      "filterBooks": "Livres",
+      "sortBy": "Trier par",
+      "sortFeatured": "Mis en avant",
+      "sortNewest": "Nouveautés",
+      "empty": "Aucun article disponible dans cette catégorie.",
+      "buyNow": "Commander via FedaPay",
+      "preOrderNow": "Précommander via FedaPay",
+      "askQuestion": "Poser une question sur cette pièce",
+      "detailsHeading": "Détails & Caractéristiques",
+      "shippingHeading": "Fabrication & Délais de livraison",
+      "afterPaymentNotice": "Après votre règlement sécurisé FedaPay, vous serez redirigé vers la page de commande pour saisir votre adresse de livraison.",
+      "podNotice": "Impression à la demande : chaque pièce est produite spécialement après confirmation de commande pour une qualité irréprochable.",
+      "rightsNotice": "Tous droits réservés © Roddy AGBO. L'achat d'un produit ne cède aucun droit de reproduction ou d'exploitation.",
+      "moreFromShop": "Autres créations de la boutique",
+      "requestPurchase": "Faire une demande d'achat",
+      "selectVariant": "Choisir une variante / format",
+      "priceInXof": "Les prix sont indiqués en francs CFA (XOF)",
+      "productionTime": "Délai de fabrication",
+      "shippingZones": "Zones de livraison",
+      "prelaunchTitle": "Boutique en préparation",
+      "prelaunchSubtitle": "La boutique ouvrira bientôt avec des tirages, livres et objets dérivés. Les visuels et informations de commande sont en cours de préparation."
+    },
+    "orderDetails": {
+      "title": "Informations de livraison de votre commande",
+      "subtitle": "Renseignez ce formulaire après votre paiement sécurisé FedaPay afin de transmettre votre adresse d'expédition.",
+      "fedapayRef": "Référence de transaction FedaPay",
+      "clientName": "Nom et prénom",
+      "clientEmail": "Adresse e-mail",
+      "clientPhone": "Numéro de téléphone / WhatsApp",
+      "address": "Adresse complète de livraison (Rue, Ville, Code postal, Pays)",
+      "notes": "Précisions de livraison (indications géographiques, repères)",
+      "submit": "Transmettre mon adresse de livraison",
+      "directNotice": "Vos coordonnées sont transmises directement à Roddy AGBO pour lancer la fabrication chez le fournisseur d'impression."
+    },
+    "legal": {
+      "shippingTitle": "Politique de livraison et retours",
+      "termsTitle": "Conditions générales de vente (CGV)",
+      "privacyTitle": "Politique de confidentialité",
+      "legalDisclaimer": "Ce document est un modèle indicatif. Il doit être relu et validé par un professionnel du droit avant mise en service."
+    },
+    "services": {
+      "title": "Ce que je peux apporter à votre projet",
+      "subtitle": "De l’idée aux images finales, j’interviens sur la conception, la narration visuelle et la fabrication."
+    }
+  }
+}

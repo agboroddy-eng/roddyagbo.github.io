@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../../site.config.json';
+import { useTranslations } from '../i18n/ui';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const artistEmail = siteConfig.contact.email !== '[À REMPLIR]' ? siteConfig.contact.email : 'contact@roddyagbo.com';
+const artistWhatsapp = siteConfig.contact.whatsapp !== '[À REMPLIR]' ? siteConfig.contact.whatsapp : '';
+---
+
+<Layout 
+  title="Order Details" 
+  description="Submit your shipping address and FedaPay payment reference."
+  lang={lang}
+>
+  <div class="container order-page">
+    <header class="order-header">
+      <h1 class="page-title">{t('orderDetails.title')}</h1>
+      <p class="page-lead">{t('orderDetails.subtitle')}</p>
+    </header>
+
+    <div class="order-form-container">
+      <form id="order-details-form" class="clean-form">
+        <div class="form-group">
+          <label for="fedapayRef">{t('orderDetails.fedapayRef')} <span class="required">*</span></label>
+          <input type="text" id="fedapayRef" name="fedapayRef" required placeholder="Ex: FP-9823471" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName">{t('orderDetails.clientName')} <span class="required">*</span></label>
+            <input type="text" id="clientName" name="clientName" required placeholder="Jane Doe" />
+          </div>
+
+          <div class="form-group">
+            <label for="clientEmail">{t('orderDetails.clientEmail')} <span class="required">*</span></label>
+            <input type="email" id="clientEmail" name="clientEmail" required placeholder="jane@example.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clientPhone">{t('orderDetails.clientPhone')} <span class="required">*</span></label>
+          <input type="tel" id="clientPhone" name="clientPhone" required placeholder="+229 00 00 00 00" />
+        </div>
+
+        <div class="form-group">
+          <label for="shippingAddress">{t('orderDetails.address')} <span class="required">*</span></label>
+          <textarea id="shippingAddress" name="shippingAddress" rows="4" required placeholder="Street, Neighborhood, City, Country..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="deliveryNotes">{t('orderDetails.notes')}</label>
+          <input type="text" id="deliveryNotes" name="deliveryNotes" placeholder="Near pharmacy, landmark..." />
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="submit-order-btn" class="btn-submit">
+            {t('orderDetails.submit')} &rarr;
+          </button>
+        </div>
+
+        <p class="form-notice">{t('orderDetails.directNotice')}</p>
+      </form>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ artistEmail }}>
+  function setupOrderForm() {
+    const btn = document.getElementById('submit-order-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const ref = document.getElementById('fedapayRef')?.value || '';
+      const name = document.getElementById('clientName')?.value || '';
+      const email = document.getElementById('clientEmail')?.value || '';
+      const phone = document.getElementById('clientPhone')?.value || '';
+      const addr = document.getElementById('shippingAddress')?.value || '';
+      const notes = document.getElementById('deliveryNotes')?.value || '';
+
+      const subject = encodeURIComponent(`[FedaPay Order Delivery] Ref: ${ref} from ${name}`);
+      const body = encodeURIComponent(`Order Details:\nRef: ${ref}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nAddress:\n${addr}\n\nNotes: ${notes}`);
+
+      window.location.href = `mailto:${artistEmail}?subject=${subject}&body=${body}`;
+    });
+  }
+
+  setupOrderForm();
+  document.addEventListener('astro:after-swap', setupOrderForm);
+</script>
+
+<style>
+  .order-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .order-header {
+    max-width: 720px;
+    margin-bottom: 3.5rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+  }
+
+  .order-form-container {
+    max-width: 680px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 2.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .clean-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .required {
+    color: #990000;
+  }
+
+  input, textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .btn-submit {
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.85rem 1.6rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+  }
+
+  .form-notice {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+</style>

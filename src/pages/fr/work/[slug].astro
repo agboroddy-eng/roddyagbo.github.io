@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import FilmTemplate from '../../../components/templates/FilmTemplate.astro';
+import BookTemplate from '../../../components/templates/BookTemplate.astro';
+import StoryboardTemplate from '../../../components/templates/StoryboardTemplate.astro';
+import { useTranslations } from '../../../i18n/ui';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }: any) => data.status === 'published');
+  const sorted = projects.sort((a: any, b: any) => a.data.order - b.data.order);
+
+  return sorted.map((project: any, index: number) => {
+    const prev = index > 0 ? sorted[index - 1] : sorted[sorted.length - 1];
+    const next = index < sorted.length - 1 ? sorted[index + 1] : sorted[0];
+    return {
+      params: { slug: project.data.slug },
+      props: { project: project.data, prev: prev.data, next: next.data }
+    };
+  });
+}
+
+const { project, prev, next } = Astro.props;
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title={project.seo.title.fr} 
+  description={project.seo.description.fr} 
+  lang={lang} 
+  ogImage={project.seo.ogImage}
+>
+  <div class="container">
+    {project.type === 'film' && <FilmTemplate project={project} lang={lang} />}
+    {project.type === 'book' && <BookTemplate project={project} lang={lang} />}
+    {project.type === 'storyboard' && <StoryboardTemplate project={project} lang={lang} />}
+
+    <nav class="project-pagination" aria-label="Navigation des projets">
+      <div class="pagination-link prev">
+        <span class="nav-direction">&larr; {t('project.prevProject')}</span>
+        <a href={`/fr/work/${prev.slug}`} class="nav-title">{prev.title.fr}</a>
+      </div>
+
+      <a href="/fr" class="nav-all">{t('project.allProjects')}</a>
+
+      <div class="pagination-link next">
+        <span class="nav-direction">{t('project.nextProject')} &rarr;</span>
+        <a href={`/fr/work/${next.slug}`} class="nav-title">{next.title.fr}</a>
+      </div>
+    </nav>
+
+    <section class="project-cta-banner">
+      <h2>{t('project.discussSimilar')}</h2>
+      <a href="/fr/contact" class="btn-primary">{t('project.contactCta')} &rarr;</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .project-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem;
+  }
+
+  @media (min-width: 640px) {
+    .project-pagination {
+      flex-direction: row;
+    }
+  }
+
+  .pagination-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .pagination-link.next {
+    text-align: right;
+  }
+
+  .nav-direction {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+  }
+
+  .nav-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .nav-title:hover {
+    text-decoration: underline;
+  }
+
+  .nav-all {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-all:hover {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+
+  .project-cta-banner {
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 3.5rem 2rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .project-cta-banner h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: opacity var(--transition-fast);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+</style>

@@ -1,0 +1,289 @@
+---
+import type { Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const isFr = lang === 'fr';
+
+const primaryImage = project.images && project.images.length > 0 ? project.images[0] : null;
+const additionalImages = project.images && project.images.length > 1 ? project.images.slice(1) : [];
+---
+
+<article class="project-detail storyboard-detail">
+  <header class="detail-header">
+    <div class="category-tags">
+      {project.categories.map((cat: string) => (
+        <span class="category-tag">{cat}</span>
+      ))}
+    </div>
+    <h1 class="project-title">{isFr ? project.title.fr : project.title.en}</h1>
+    <p class="project-lead">{isFr ? project.summary.fr : project.summary.en}</p>
+  </header>
+
+  <div class="main-board-container">
+    {primaryImage && (
+      <figure class="board-figure">
+        <div class="board-frame" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
+          <img 
+            src={primaryImage.src} 
+            alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
+            width={primaryImage.width} 
+            height={primaryImage.height} 
+            class="board-img" 
+          />
+        </div>
+        {primaryImage.caption && (
+          <figcaption class="board-caption">{isFr ? primaryImage.caption.fr : primaryImage.caption.en}</figcaption>
+        )}
+      </figure>
+    )}
+  </div>
+
+  <div class="content-grid">
+    <div class="content-main">
+      <section class="section-block">
+        <h2 class="section-heading">{t('project.contextTitle')}</h2>
+        <div class="text-prose">
+          <p>{isFr ? project.description.fr : project.description.en}</p>
+        </div>
+      </section>
+
+      <section class="section-block highlight-role">
+        <h2 class="section-heading">{t('project.roleTitle')}</h2>
+        <div class="text-prose">
+          <p>{isFr ? project.role.fr : project.role.en}</p>
+        </div>
+      </section>
+    </div>
+
+    <aside class="content-sidebar">
+      <div class="sidebar-block notice-confidential">
+        <h3 class="sidebar-title">{isFr ? "Précision déontologique" : "Production Notice"}</h3>
+        <p class="notice-text">
+          {isFr 
+            ? "Seuls les travaux de recherche personnelle, animatics autorisés et projets non-confidentiels sont présentés. Tout élément sous accord de confidentialité studio est exclu." 
+            : "Only personal pre-production studies, authorized animatics, and non-confidential blueprints are shown. Studio confidential assets are strictly excluded."}
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  {additionalImages.length > 0 && (
+    <section class="sequences-section">
+      <h2 class="section-heading">{t('project.visualsTitle')}</h2>
+      <div class="sequences-stack">
+        {additionalImages.map((img: any, idx: number) => (
+          <figure class="sequence-card">
+            <div class="sequence-frame" style={`aspect-ratio: ${img.width} / ${img.height};`}>
+              <img 
+                src={img.src} 
+                alt={isFr ? img.alt.fr : img.alt.en} 
+                width={img.width} 
+                height={img.height} 
+                loading="lazy" 
+                class="sequence-img" 
+              />
+            </div>
+            <div class="sequence-meta">
+              <span class="sequence-index">#{String(idx + 1).padStart(2, '0')}</span>
+              {img.caption && (
+                <p class="sequence-text">{isFr ? img.caption.fr : img.caption.en}</p>
+              )}
+            </div>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+</article>
+
+<style>
+  .project-detail {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .detail-header {
+    margin-bottom: 3rem;
+  }
+
+  .category-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 768px) {
+    .project-title {
+      font-size: 3.25rem;
+    }
+  }
+
+  .project-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 780px;
+  }
+
+  .main-board-container {
+    margin-bottom: 4rem;
+  }
+
+  .board-frame {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .board-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .board-caption {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .section-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .text-prose p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .highlight-role {
+    background-color: #F3F1EC;
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-text);
+  }
+
+  .highlight-role .section-heading {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .sidebar-block {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .sidebar-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+
+  .sequences-section {
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .sequences-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .sequence-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .sequence-frame {
+    width: 100%;
+    background: var(--color-border);
+  }
+
+  .sequence-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .sequence-meta {
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sequence-index {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  .sequence-text {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+</style>

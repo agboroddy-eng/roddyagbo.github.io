@@ -1,0 +1,72 @@
+{
+  "title": {
+    "en": "Organic Cotton Tote Bag",
+    "fr": "Tote bag en coton biologique"
+  },
+  "slug": "tote-bag-illustration",
+  "type": "merch",
+  "categories": [
+    "Goodies"
+  ],
+  "description": {
+    "en": "Durable heavy-weight organic cotton tote bag screen-printed with a personal character artwork by Roddy AGBO.",
+    "fr": "Tote bag résistant en coton épais biologique sérigraphié avec un personnage original de Roddy AGBO."
+  },
+  "details": {
+    "dimensions": "38 x 42 cm, anses 70 cm",
+    "material": "100% Coton biologique 300g / m²",
+    "finish": "Impression textile haute tenue",
+    "year": "2024"
+  },
+  "variants": [
+    {
+      "name": {
+        "en": "Natural Ecru",
+        "fr": "Écru naturel"
+      },
+      "priceXof": "[À REMPLIR]",
+      "sku": "MERCH-TOTE-ECRU",
+      "fedapayUrl": ""
+    }
+  ],
+  "currency": "XOF",
+  "availability": "coming-soon",
+  "fulfillment": {
+    "method": "print-on-demand",
+    "provider": "[À CHOISIR]",
+    "productionDays": "[À REMPLIR]"
+  },
+  "edition": "open",
+  "stock": "",
+  "images": [
+    {
+      "src": "/images/products/tote-bag.svg",
+      "alt": {
+        "en": "Organic Cotton Tote bag placeholder",
+        "fr": "Visuel du tote bag en coton"
+      },
+      "width": 800,
+      "height": 800,
+      "ratio": "1:1"
+    }
+  ],
+  "relatedSeries": "Recherches personnages",
+  "shippingProfile": "standard",
+  "checkout": {
+    "mode": "none",
+    "url": ""
+  },
+  "featured": false,
+  "order": 3,
+  "published": false,
+  "seo": {
+    "title": {
+      "en": "Illustrated Tote Bag — Roddy AGBO Shop",
+      "fr": "Tote Bag illustré — Boutique Roddy AGBO"
+    },
+    "description": {
+      "en": "Organic cotton tote bag printed with an exclusive personal illustration by Roddy AGBO.",
+      "fr": "Tote bag en coton bio avec illustration personnelle exclusive de Roddy AGBO."
+    }
+  }
+}

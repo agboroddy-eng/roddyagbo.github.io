@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../site.config.json';
+import { useTranslations } from '../../i18n/ui';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<Layout title="Livraison & Retours" description="Informations sur la fabrication, les délais d'acheminement et les retours." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">{t('legal.shippingTitle')}</h1>
+      <p class="disclaimer-tag">Les prix sont indiqués en francs CFA (XOF)</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Fabrication à la demande</h2>
+        <p>Les tirages d'art et créations proposés dans cette boutique sont exclusivement issus des œuvres personnelles de Roddy AGBO. Chaque exemplaire est imprimé à la demande pour garantir une fraîcheur et une fidélité colorimétrique maximale.</p>
+        <p>Délai de production : <strong>à confirmer avant ouverture</strong> après confirmation de commande.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Zones d'expédition & Délais indicatifs</h2>
+        <ul>
+          <li><strong>Bénin (Livraison locale) :</strong> à confirmer avant ouverture — Frais : à confirmer avant ouverture</li>
+          <li><strong>Sous-région / Afrique de l'Ouest :</strong> à confirmer avant ouverture — Frais : à confirmer avant ouverture</li>
+          <li><strong>International :</strong> à confirmer avant ouverture — Frais : à confirmer avant ouverture</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Colis endommagé ou erreur d'impression</h2>
+        <p>Si un tirage arrive abîmé pendant le transport, photographiez le colis et l'œuvre dès réception (sous 48h) et contactez Roddy AGBO via le formulaire de contact ou WhatsApp. Un retirage sera immédiatement enclenché.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>4. Annulation</h2>
+        <p>En raison du caractère personnalisé de l'impression à la demande, toute annulation doit être formulée avant l'entrée en production du tirage.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p, .legal-section ul { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+  .legal-section ul { padding-left: 1.5rem; }
+</style>

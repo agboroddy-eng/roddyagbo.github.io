@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="100%" height="100%" fill="#E5E5E5"/>
+  <rect x="20" y="20" width="1160" height="635" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="#595959" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600">L'art ou la rue — Visuel principal</text>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#777777" font-family="system-ui, -apple-system, sans-serif" font-size="16">Ratio 16:9 — 1200x675 px [À REMPLIR]</text>
+</svg>

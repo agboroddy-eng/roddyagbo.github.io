@@ -1,0 +1,69 @@
+{
+  "title": {
+    "en": "Skin Health & Depigmentation Awareness Comic",
+    "fr": "Planches de BD — Sensibilisation sur la dépigmentation"
+  },
+  "slug": "bd-depigmentation",
+  "categories": [
+    "Illustration"
+  ],
+  "type": "book",
+  "featured": true,
+  "order": 6,
+  "status": "published",
+  "summary": {
+    "en": "Two sequential comic pages created for a public health awareness campaign addressing skin bleaching risks.",
+    "fr": "Réalisation de deux planches de bande dessinée dans le cadre d'un projet de sensibilisation sur la dépigmentation."
+  },
+  "description": {
+    "en": "Sequential art project dedicated to public health and self-acceptance. The story follows Aïcha confronting social beauty pressures and the physical damage of toxic lightening creams containing hydroquinone. Through a consultation with a dermatologist, she learns to care for her skin and celebrate her natural complexion. Slogan: 'Préserve ta peau, évite la dépigmentation'.",
+    "fr": "Bande dessinée de sensibilisation sanitaire et d'acceptation de soi. Le récit met en scène Aïcha, confrontée aux injonctions esthétiques et aux ravages des produits éclaircissants à base d'hydroquinone. Grâce à l'écoute d'une dermatologue, elle retrouve le chemin de la santé cutanée et de la fierté de sa carnation naturelle. Slogan : « Préserve ta peau, évite la dépigmentation »."
+  },
+  "role": {
+    "en": "Comic Artist: visual development of Aïcha, sequential storyboarding, pencils, inking, dialogue lettering, and coloring.",
+    "fr": "Auteur & Dessinateur BD : création du personnage d'Aïcha, découpage séquentiel, dessin au trait, encrage, lettrage et mise en couleur des deux planches."
+  },
+  "credits": [
+    {
+      "role": "Thématique",
+      "name": "Santé publique & Prévention dermatologique"
+    },
+    {
+      "role": "Slogan de campagne",
+      "name": "« Préserve ta peau, évite la dépigmentation »"
+    },
+    {
+      "role": "Scénario visuel & Dessin",
+      "name": "Roddy AGBO"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/bd-depigmentation/cover.jpg",
+      "alt": {
+        "en": "Comic pages on skin bleaching awareness",
+        "fr": "Planche de bande dessinée sur la prévention de la dépigmentation"
+      },
+      "width": 1024,
+      "height": 682,
+      "caption": {
+        "en": "Comic page 28 — Visual narrative for health education",
+        "fr": "Planche 28 — Narration visuelle et pédagogique"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "Skin Bleaching Awareness Comic | Roddy AGBO",
+      "fr": "Bande dessinée Sensibilisation Dépigmentation | Roddy AGBO"
+    },
+    "description": {
+      "en": "Educational comic pages on skin health and depigmentation awareness by comic artist Roddy AGBO.",
+      "fr": "Planches de bande dessinée éducative sur la dépigmentation et la santé cutanée par Roddy AGBO."
+    }
+  }
+}

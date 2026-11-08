@@ -1,0 +1,67 @@
+{
+  "title": {
+    "en": "Dona & Tom and The First Extraterrestrial",
+    "fr": "Dona et Tom & Le 1er Extraterrestre"
+  },
+  "slug": "dona-et-tom",
+  "categories": [
+    "Illustration"
+  ],
+  "type": "book",
+  "featured": true,
+  "order": 3,
+  "status": "published",
+  "summary": {
+    "en": "Two illustrated children’s books for Armand Dan Éditions, built around engaging characters and accessible visual worlds for young readers.",
+    "fr": "Deux livres jeunesse illustrés pour Armand Dan Éditions, autour de personnages attachants et d’univers graphiques accessibles aux jeunes lecteurs."
+  },
+  "description": {
+    "en": "Editorial illustration project for author Débora Fanou and Armand Dan Éditions. I developed the characters, covers and interior illustrations for Dona & Tom and The First Extraterrestrial, building a coherent, warm and readable visual language for young readers.",
+    "fr": "Projet éditorial réalisé pour l’auteur Débora Fanou et la maison Armand Dan Éditions. J’ai développé les personnages, les couvertures et les illustrations intérieures de Dona et Tom ainsi que du 1er Extraterrestre, en construisant un langage visuel cohérent, tendre et lisible pour le jeune public."
+  },
+  "role": {
+    "en": "Illustrator & character designer: character creation, cover design and narrative interior illustrations for both books.",
+    "fr": "Illustrateur & character designer : création des personnages, conception des couvertures et réalisation des illustrations narratives intérieures pour les deux livres."
+  },
+  "credits": [
+    {
+      "role": "Auteur / Author",
+      "name": "Débora Fanou"
+    },
+    {
+      "role": "Maison d’édition / Publisher",
+      "name": "Armand Dan Éditions"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/dona-et-tom/cover.jpg",
+      "alt": {
+        "en": "Dona et Tom book cover illustration",
+        "fr": "Couverture illustrée du livre Dona et Tom"
+      },
+      "width": 1024,
+      "height": 682,
+      "caption": {
+        "en": "Book cover — Armand Dan Éditions",
+        "fr": "Couverture du livre — Armand Dan Éditions"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [
+    "artbook-vol-1"
+  ],
+  "seo": {
+    "title": {
+      "en": "Dona et Tom — Children's Book | Roddy AGBO",
+      "fr": "Dona et Tom — Livre illustré jeunesse | Roddy AGBO"
+    },
+    "description": {
+      "en": "Children's book illustrations for Dona et Tom by Débora Fanou (Armand Dan Éditions). Illustrated by Roddy AGBO.",
+      "fr": "Illustrations jeunesse pour le livre Dona et Tom de Débora Fanou (Armand Dan Éditions), illustré par Roddy AGBO."
+    }
+  }
+}

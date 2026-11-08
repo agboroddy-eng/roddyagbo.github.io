@@ -1,0 +1,202 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ShopPreviewCard from '../../../components/ShopPreviewCard.astro';
+import siteConfig from '../../../../site.config.json';
+import { useTranslations } from '../../../i18n/ui';
+import { getCollection } from 'astro:content';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const allProducts = await getCollection('products', ({ data }: any) => data.published);
+const sortedProducts = allProducts.sort((a: any, b: any) => a.data.order - b.data.order);
+
+const shopCategories = [
+  { key: 'all', label: t('shop.filterAll') },
+  { key: 'Wall art', label: t('shop.filterWallArt') },
+  { key: 'Goodies', label: t('shop.filterGoodies') },
+  { key: 'Books', label: t('shop.filterBooks') }
+];
+---
+
+<Layout 
+  title="Boutique" 
+  description="Boutique officielle de Roddy AGBO : tirages d'art, artbook et créations dérivées exclusives."
+  lang={lang}
+>
+  <div class="container shop-catalog-page">
+    <header class="shop-header">
+      <h1 class="page-title">{t('shop.title')}</h1>
+      <p class="page-lead">{t('shop.subtitle')}</p>
+      <p class="currency-disclaimer">{t('shop.priceInXof')}</p>
+    </header>
+
+    <section class="shop-prelaunch" aria-labelledby="shop-prelaunch-heading">
+      <h2 id="shop-prelaunch-heading">{t('shop.prelaunchTitle')}</h2>
+      <p>{t('shop.prelaunchSubtitle')}</p>
+    </section>
+    <div class="shop-toolbar">
+      <div class="filter-group" role="toolbar" aria-label="Filtrer les articles de la boutique">
+        {shopCategories.map((cat, idx) => (
+          <button 
+            type="button" 
+            class:list={['shop-filter-btn', { 'is-active': idx === 0 }]}
+            data-filter={cat.key}
+            aria-pressed={idx === 0 ? "true" : "false"}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div id="shop-grid" class="shop-grid">
+      {sortedProducts.map((p: any) => (
+        <div class="product-item" data-categories={JSON.stringify(p.data.categories)}>
+          <ShopPreviewCard product={p.data} lang={lang} />
+        </div>
+      ))}
+    </div>
+
+    <div id="empty-shop-state" class="empty-state" style="display: none;">
+      <p>{t('shop.empty')}</p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function setupShopFilters() {
+    const btns = document.querySelectorAll<HTMLButtonElement>('.shop-filter-btn');
+    const items = document.querySelectorAll<HTMLElement>('.product-item');
+    const emptyState = document.getElementById('empty-shop-state');
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        if (!filter) return;
+
+        btns.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        let visible = 0;
+        items.forEach((item) => {
+          const cats = JSON.parse(item.getAttribute('data-categories') || '[]');
+          if (filter === 'all' || cats.includes(filter)) {
+            item.style.display = '';
+            visible++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visible === 0 ? 'block' : 'none';
+        }
+      });
+    });
+  }
+
+  setupShopFilters();
+  document.addEventListener('astro:after-swap', setupShopFilters);
+</script>
+
+<style>
+  .shop-catalog-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .shop-header {
+    margin-bottom: 3.5rem;
+    max-width: 760px;
+  }
+
+  .page-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.15rem;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .currency-disclaimer {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .shop-prelaunch {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+  .shop-prelaunch h2 { font-size: 1.15rem; margin-bottom: .35rem; }
+  .shop-prelaunch p { color: var(--color-muted); font-size: .95rem; }
+  .shop-toolbar {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .shop-filter-btn {
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-muted);
+    background: transparent;
+    transition: all var(--transition-fast);
+  }
+
+  .shop-filter-btn:hover {
+    color: var(--color-text);
+    background-color: var(--color-border);
+  }
+
+  .shop-filter-btn.is-active {
+    color: var(--color-text);
+    background-color: var(--color-border);
+    font-weight: 600;
+  }
+
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .shop-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .shop-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--color-muted);
+  }
+</style>

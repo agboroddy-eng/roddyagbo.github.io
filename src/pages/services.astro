@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+const isFr = false;
+const services = isFr ? [
+  { title: 'Illustration éditoriale', text: 'Couvertures, livres jeunesse, bande dessinée et illustrations pédagogiques avec un langage visuel lisible et sensible.' },
+  { title: 'Animation 2D', text: 'Films explicatifs, courts métrages, personnages animés et motion design pour donner vie à une idée ou un message.' },
+  { title: 'Direction artistique & développement visuel', text: 'Univers graphiques, character design, décors, palettes et cohérence visuelle pour des projets audiovisuels et culturels.' },
+  { title: 'Storyboard & préproduction', text: 'Découpage technique, storyboard, animatic et layout pour transformer un scénario en plan de fabrication clair.' }
+] : [
+  { title: 'Editorial Illustration', text: 'Book covers, children’s books, comics and educational illustrations with a clear and expressive visual language.' },
+  { title: '2D Animation', text: 'Explainer films, short films, animated characters and motion design to bring an idea or message to life.' },
+  { title: 'Art Direction & Visual Development', text: 'Visual worlds, character design, backgrounds, palettes and visual consistency for audiovisual and cultural projects.' },
+  { title: 'Storyboard & Pre-production', text: 'Technical breakdowns, storyboards, animatics and layouts that turn a script into a clear production blueprint.' }
+];
+---
+<Layout title={isFr ? 'Services' : 'Services'} description={t('services.subtitle')} lang={lang}>
+  <div class="container services-page">
+    <header class="services-header">
+      <p class="eyebrow">{isFr ? 'Collaborations professionnelles' : 'Professional collaborations'}</p>
+      <h1 class="page-title">{t('services.title')}</h1>
+      <p class="page-lead">{t('services.subtitle')}</p>
+    </header>
+    <section class="services-grid" aria-label={isFr ? 'Services proposés' : 'Services offered'}>
+      {services.map((service) => (
+        <article class="service-card">
+          <h2>{service.title}</h2>
+          <p>{service.text}</p>
+        </article>
+      ))}
+    </section>
+    <section class="software-panel">
+      <h2>{t('about.softwareTitle')}</h2>
+      <p>Clip Studio Paint · TVPaint · Photoshop · After Effects · Premiere Pro</p>
+    </section>
+    <section class="services-cta">
+      <h2>{isFr ? 'Un projet en préparation ?' : 'Planning a project?'}</h2>
+      <p>{isFr ? 'Envoyez-moi votre brief et parlons des besoins visuels, du calendrier et du mode de collaboration.' : 'Send me your brief and let’s discuss the visual needs, timeline and collaboration setup.'}</p>
+      <a href={isFr ? '/fr/contact' : '/contact'} class="btn-primary">{t('footer.contactMe')} &rarr;</a>
+    </section>
+  </div>
+</Layout>
+<style>
+  .services-page { padding-top: 4rem; padding-bottom: 6rem; }
+  .services-header { max-width: 800px; margin-bottom: 3.5rem; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; font-weight: 700; color: var(--color-muted); margin-bottom: .8rem; }
+  .page-title { font-size: 2.75rem; line-height: 1.15; margin-bottom: .8rem; }
+  .page-lead { font-size: 1.15rem; color: var(--color-muted); max-width: 720px; }
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  @media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; } }
+  .service-card { padding: 2rem; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+  .service-card h2 { font-size: 1.25rem; margin-bottom: .8rem; }
+  .service-card p { color: var(--color-muted); line-height: 1.7; }
+  .software-panel { margin-top: 3.5rem; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .software-panel h2 { font-size: 1.15rem; margin-bottom: .4rem; }
+  .software-panel p { color: var(--color-muted); }
+  .services-cta { margin-top: 4rem; padding: 3rem 2rem; background: #fff; border: 1px solid var(--color-border); text-align: center; border-radius: var(--radius-sm); }
+  .services-cta h2 { font-size: 1.6rem; margin-bottom: .7rem; }
+  .services-cta p { color: var(--color-muted); max-width: 620px; margin: 0 auto 1.5rem; }
+  .btn-primary { display: inline-block; padding: .8rem 1.5rem; background: var(--color-text); color: var(--color-bg); border-radius: var(--radius-sm); font-weight: 600; }
+</style>

@@ -1,0 +1,161 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  project: {
+    slug: string;
+    title: { en: string; fr: string };
+    categories: string[];
+    type: string;
+    summary: { en: string; fr: string };
+    images: Array<{
+      src: string;
+      alt: { en: string; fr: string };
+      width: number;
+      height: number;
+      ratio?: string;
+    }>;
+  };
+  lang: Lang;
+  index: number;
+}
+
+const { project, lang, index } = Astro.props;
+const isFr = lang === 'fr';
+
+const primaryImage = project.images[0] || {
+  src: '/images/placeholder.svg',
+  alt: { en: 'Project visual', fr: 'Visuel du projet' },
+  width: 1200,
+  height: 800,
+  ratio: '3:2'
+};
+
+const projectUrl = isFr ? `/fr/work/${project.slug}` : `/work/${project.slug}`;
+const categoriesAttr = JSON.stringify(project.categories);
+---
+
+<article 
+  class="project-card" 
+  data-categories={categoriesAttr}
+  data-slug={project.slug}
+>
+  <a href={projectUrl} class="card-link">
+    <div class="media-container" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
+      <img 
+        src={primaryImage.src} 
+        alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
+        width={primaryImage.width} 
+        height={primaryImage.height} 
+        loading={index === 0 ? "eager" : "lazy"} 
+        decoding={index === 0 ? "sync" : "async"}
+        class="card-img"
+      />
+      <div class="overlay">
+        <span class="view-cta">{isFr ? 'Voir le projet' : 'View project'} &rarr;</span>
+      </div>
+    </div>
+
+    <div class="meta">
+      <h3 class="title">{isFr ? project.title.fr : project.title.en}</h3>
+      <p class="category-list">
+        {project.categories.join(' · ')}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .project-card {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .media-container {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 23, 23, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    backdrop-filter: blur(2px);
+  }
+
+  .view-cta {
+    color: var(--color-bg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(250, 249, 246, 0.6);
+    border-radius: var(--radius-sm);
+    transform: translateY(4px);
+    transition: transform var(--transition-fast);
+  }
+
+  @media (hover: hover) {
+    .card-link:hover .overlay {
+      opacity: 1;
+    }
+    .card-link:hover .view-cta {
+      transform: translateY(0);
+    }
+    .card-link:hover .card-img {
+      transform: scale(1.02);
+    }
+  }
+
+  @media (hover: none) {
+    .overlay {
+      display: none;
+    }
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+
+  .category-list {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+</style>

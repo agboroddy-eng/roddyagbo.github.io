@@ -1,0 +1,302 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import siteConfig from '../../../../site.config.json';
+import { useTranslations } from '../../../i18n/ui';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products', ({ data }: any) => data.published);
+  return products.map((product: any) => ({
+    params: { slug: product.data.slug },
+    props: { product: product.data }
+  }));
+}
+
+const { product } = Astro.props;
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const primaryImage = product.images[0] || {
+  src: '/images/products/placeholder.svg',
+  alt: { en: 'Product visual', fr: 'Visuel produit' },
+  width: 800,
+  height: 800
+};
+
+const artistEmail = siteConfig.contact.email !== '[À REMPLIR]' ? siteConfig.contact.email : 'contact@roddyagbo.com';
+const artistWhatsapp = siteConfig.contact.whatsapp !== '[À REMPLIR]' ? siteConfig.contact.whatsapp : '';
+---
+
+<Layout 
+  title={product.seo.title.fr} 
+  description={product.seo.description.fr} 
+  lang={lang} 
+  ogImage={product.seo.ogImage}
+>
+  <div class="container product-detail-page">
+    <div class="product-layout">
+      <!-- Galerie / Image principale -->
+      <div class="product-gallery">
+        <div class="main-image-frame" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
+          <img 
+            src={primaryImage.src} 
+            alt={primaryImage.alt.fr} 
+            width={primaryImage.width} 
+            height={primaryImage.height} 
+            class="product-detail-img" 
+          />
+        </div>
+      </div>
+
+      <!-- Informations produit & Action d'achat -->
+      <div class="product-content">
+        <div class="product-meta-top">
+          <span class="type-pill">{product.type.toUpperCase()}</span>
+          <span class:list={['status-badge', product.availability]}>
+            {product.availability === 'coming-soon' ? 'Bientôt disponible' : product.availability}
+          </span>
+        </div>
+
+        <h1 class="product-title">{product.title.fr}</h1>
+
+        <div class="price-display">
+          <span class="price-amount">
+            {typeof product.variants[0]?.priceXof === 'number' 
+              ? `${product.variants[0].priceXof.toLocaleString('fr-FR')} FCFA`
+              : `${product.variants[0]?.priceXof} FCFA`}
+          </span>
+          <span class="price-notice">{t('shop.priceInXof')}</span>
+        </div>
+
+        <div class="description-block">
+          <p>{product.description.fr}</p>
+        </div>
+
+        <!-- Bouton d'achat / repli FedaPay -->
+        <div class="purchase-box">
+          {product.checkout.mode === 'external' && product.checkout.url ? (
+            <div class="checkout-actions">
+              <a href={product.checkout.url} target="_blank" rel="noopener noreferrer" class="btn-fedapay">
+                {product.availability === 'pre-order' ? t('shop.preOrderNow') : t('shop.buyNow')} &rarr;
+              </a>
+              <p class="post-payment-hint">{t('shop.afterPaymentNotice')}</p>
+            </div>
+          ) : (
+            <div class="coming-soon-box">
+              <span class="cs-label">Statut : Bientôt disponible</span>
+              <p class="cs-text">Cette création sera achetable prochainement via FedaPay. Vous pouvez poser une question par avance ci-dessous.</p>
+            </div>
+          )}
+
+          <div class="secondary-actions">
+            <a 
+              href={`mailto:${artistEmail}?subject=Question concernant ${encodeURIComponent(product.title.fr)}&body=Bonjour Roddy, j'ai une question concernant votre tirage ${encodeURIComponent(product.title.fr)}:`} 
+              class="btn-inquiry"
+            >
+              {t('shop.askQuestion')} &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Détails & Fabrication -->
+        <div class="specs-accordion">
+          <section class="spec-section">
+            <h2 class="spec-title">{t('shop.detailsHeading')}</h2>
+            <ul class="spec-list">
+              {product.details.dimensions && <li><strong>Dimensions :</strong> {product.details.dimensions}</li>}
+              {product.details.material && <li><strong>Support / Matière :</strong> {product.details.material}</li>}
+              {product.details.finish && <li><strong>Finition :</strong> {product.details.finish}</li>}
+              {product.details.year && <li><strong>Année de l'œuvre :</strong> {product.details.year}</li>}
+            </ul>
+          </section>
+
+          <section class="spec-section">
+            <h2 class="spec-title">{t('shop.shippingHeading')}</h2>
+            <p class="fulfillment-info">{t('shop.podNotice')}</p>
+            <ul class="shipping-zones-list">
+              <li><strong>Local (Bénin) :</strong> {siteConfig.shop.fulfillment.shippingZones.local.estimatedDays}</li>
+              <li><strong>Afrique de l'Ouest / Région :</strong> {siteConfig.shop.fulfillment.shippingZones.regional.estimatedDays}</li>
+              <li><strong>International :</strong> {siteConfig.shop.fulfillment.shippingZones.international.estimatedDays}</li>
+            </ul>
+          </section>
+
+          <p class="rights-disclaimer">{t('shop.rightsNotice')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .product-detail-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .product-layout {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+  }
+
+  .main-image-frame {
+    width: 100%;
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .product-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .type-pill {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .product-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .price-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .price-amount {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .price-notice {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .description-block {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--color-text);
+  }
+
+  .purchase-box {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .btn-fedapay {
+    display: block;
+    text-align: center;
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.9rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+  }
+
+  .post-payment-hint {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+    margin-top: 0.5rem;
+  }
+
+  .coming-soon-box {
+    padding: 1rem;
+    background: #F3F1EC;
+    border-radius: var(--radius-sm);
+  }
+
+  .cs-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cs-text {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  .btn-inquiry {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .specs-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .spec-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .spec-list, .shipping-zones-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .fulfillment-info {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .rights-disclaimer {
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+</style>

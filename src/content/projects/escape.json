@@ -1,0 +1,41 @@
+{
+  "title": {
+    "en": "ESCAPE — 2D Animated Short Film",
+    "fr": "ESCAPE — Court métrage d’animation 2D"
+  },
+  "slug": "escape",
+  "categories": [
+    "Animation 2D"
+  ],
+  "type": "film",
+  "featured": false,
+  "order": 3,
+  "status": "draft",
+  "summary": {
+    "en": "A 1 minute 30 second 2D animated short film.",
+    "fr": "Un court métrage d’animation 2D d’une durée d’1 minute 30."
+  },
+  "description": {
+    "en": "ESCAPE is a personal 2D animated short film. The project page is prepared and will be published when the approved key visual, teaser or production stills are added.",
+    "fr": "ESCAPE est un court métrage d’animation 2D personnel. La fiche est préparée et sera publiée dès que le visuel clé, le teaser ou les images de production seront ajoutés."
+  },
+  "role": {
+    "en": "2D animation, visual storytelling and film production.",
+    "fr": "Animation 2D, narration visuelle et fabrication du film."
+  },
+  "credits": [],
+  "images": [],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "ESCAPE — 2D Animated Short Film | Roddy AGBO",
+      "fr": "ESCAPE — Court métrage d’animation 2D | Roddy AGBO"
+    },
+    "description": {
+      "en": "ESCAPE, a 1 minute 30 second 2D animated short film by Roddy AGBO.",
+      "fr": "ESCAPE, un court métrage d’animation 2D d’1 minute 30 par Roddy AGBO."
+    }
+  }
+}

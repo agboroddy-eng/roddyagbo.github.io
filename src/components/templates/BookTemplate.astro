@@ -1,0 +1,277 @@
+---
+import type { Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const isFr = lang === 'fr';
+
+const primaryImage = project.images && project.images.length > 0 ? project.images[0] : null;
+const additionalImages = project.images && project.images.length > 1 ? project.images.slice(1) : [];
+const hasRelatedProduct = project.relatedProducts && project.relatedProducts.length > 0;
+const shopUrl = isFr ? '/fr/shop' : '/shop';
+---
+
+<article class="project-detail book-detail">
+  <header class="detail-header">
+    <div class="category-tags">
+      {project.categories.map((cat: string) => (
+        <span class="category-tag">{cat}</span>
+      ))}
+    </div>
+    <h1 class="project-title">{isFr ? project.title.fr : project.title.en}</h1>
+    <p class="project-lead">{isFr ? project.summary.fr : project.summary.en}</p>
+  </header>
+
+  <div class="book-showcase">
+    <div class="book-cover-wrapper">
+      {primaryImage && (
+        <div class="cover-box" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
+          <img 
+            src={primaryImage.src} 
+            alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
+            width={primaryImage.width} 
+            height={primaryImage.height} 
+            class="cover-img" 
+          />
+        </div>
+      )}
+    </div>
+
+    <div class="book-info-col">
+      <section class="section-block">
+        <h2 class="section-heading">{t('project.contextTitle')}</h2>
+        <div class="text-prose">
+          <p>{isFr ? project.description.fr : project.description.en}</p>
+        </div>
+      </section>
+
+      <section class="section-block highlight-role">
+        <h2 class="section-heading">{t('project.roleTitle')}</h2>
+        <div class="text-prose">
+          <p>{isFr ? project.role.fr : project.role.en}</p>
+        </div>
+      </section>
+
+      {hasRelatedProduct && (
+        <div class="shop-callout">
+          <span class="callout-badge">{t('project.availableInShop')}</span>
+          <p class="callout-desc">
+            {isFr 
+              ? "Des tirages et objets dérivés issus de cet univers sont disponibles dans la boutique personnelle." 
+              : "Fine art prints and items related to this narrative world are available in the personal shop."}
+          </p>
+          <a href={shopUrl} class="callout-link">
+            {t('project.viewInShop')} &rarr;
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+
+  {additionalImages.length > 0 && (
+    <section class="illustrations-gallery-section">
+      <h2 class="section-heading">{t('project.visualsTitle')}</h2>
+      <div class="gallery-flow">
+        {additionalImages.map((img: any) => (
+          <figure class="gallery-item">
+            <div class="img-frame" style={`aspect-ratio: ${img.width} / ${img.height};`}>
+              <img 
+                src={img.src} 
+                alt={isFr ? img.alt.fr : img.alt.en} 
+                width={img.width} 
+                height={img.height} 
+                loading="lazy" 
+                class="inner-img" 
+              />
+            </div>
+            {img.caption && (
+              <figcaption class="item-caption">
+                {isFr ? img.caption.fr : img.caption.en}
+              </figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+</article>
+
+<style>
+  .project-detail {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .detail-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .category-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 768px) {
+    .project-title {
+      font-size: 3.25rem;
+    }
+  }
+
+  .project-lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 780px;
+  }
+
+  .book-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .book-showcase {
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-start;
+      gap: 4.5rem;
+    }
+  }
+
+  .cover-box {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .section-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .text-prose p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .highlight-role {
+    background-color: #F3F1EC;
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-text);
+  }
+
+  .highlight-role .section-heading {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .shop-callout {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .callout-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+  }
+
+  .callout-desc {
+    font-size: 0.88rem;
+    color: var(--color-text);
+  }
+
+  .callout-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 0.25rem;
+  }
+
+  .illustrations-gallery-section {
+    padding-top: 3.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .gallery-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-flow {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .img-frame {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .inner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .item-caption {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    margin-top: 0.5rem;
+  }
+</style>

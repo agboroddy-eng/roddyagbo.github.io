@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lang = 'en';
+---
+
+<Layout title="Privacy Policy" description="Privacy policy regarding data submitted via contact and order forms." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="disclaimer-tag">Model template — to be confirmed by a legal professional.</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Data Collection</h2>
+        <p>Personal information (name, email, phone number, shipping address) entered through the contact form or the order details page is collected solely to process project inquiries and ship physical artwork orders.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Data Confidentiality & Non-Resale</h2>
+        <p>Your personal data is strictly confidential. It is never sold, rented, or transferred to advertising networks.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Contact & Rights</h2>
+        <p>You can request the modification or deletion of your contact information at any time by sending an email via the contact page.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+</style>

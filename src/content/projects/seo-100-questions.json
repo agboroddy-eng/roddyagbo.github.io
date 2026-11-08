@@ -1,0 +1,61 @@
+{
+  "title": {
+    "en": "100 Questions to Master SEO",
+    "fr": "Les 100 questions à vous poser pour réussir votre SEO"
+  },
+  "slug": "seo-100-questions",
+  "categories": [
+    "Illustration"
+  ],
+  "type": "book",
+  "featured": true,
+  "order": 5,
+  "status": "published",
+  "summary": {
+    "en": "Cover illustration and 12 chapter illustrations for a practical guide to search engine optimization.",
+    "fr": "Réalisation de l'illustration de couverture et de 12 illustrations intérieures pour un guide sur le référencement naturel."
+  },
+  "description": {
+    "en": "Cover illustration and 12 interior illustrations for “100 Questions to Master SEO”, written by Maceo Ouitona. The visual direction makes search engine mechanics accessible through visual metaphors and a recurring character. The book is available on Amazon.",
+    "fr": "Réalisation de la couverture et de 12 illustrations intérieures pour le livre « Les 100 questions à se poser pour réussir votre référencement naturel (SEO) », écrit par Maceo Ouitona. Le parti pris graphique vulgarise les mécanismes du référencement à travers des métaphores visuelles et un personnage récurrent. L’ouvrage est disponible sur Amazon."
+  },
+  "role": {
+    "en": "Editorial illustrator: cover concept, graphic design and creation of 12 themed interior illustrations.",
+    "fr": "Illustrateur éditorial : conception de la couverture, design graphique et création des 12 illustrations intérieures thématiques."
+  },
+  "credits": [
+    {
+      "role": "Auteur / Author",
+      "name": "Maceo Ouitona"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/seo-100-questions/cover.jpg",
+      "alt": {
+        "en": "100 questions SEO book cover",
+        "fr": "Couverture du livre Les 100 questions à vous poser pour réussir votre référencement naturel"
+      },
+      "width": 1024,
+      "height": 682,
+      "caption": {
+        "en": "Cover art and back cover layout — Maceo Ouitona",
+        "fr": "Illustration de couverture et 4e de couverture — Maceo Ouitona"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "SEO 100 Questions Book Illustration | Roddy AGBO",
+      "fr": "Illustration livre Les 100 questions SEO | Roddy AGBO"
+    },
+    "description": {
+      "en": "Book cover and interior illustrations for Maceo Ouitona's SEO guide. Illustrated by Roddy AGBO.",
+      "fr": "Illustration de couverture et illustrations intérieures du guide SEO de Maceo Ouitona, illustré par Roddy AGBO."
+    }
+  }
+}

@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../site.config.json';
+import { useTranslations } from '../../i18n/ui';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title="À propos" 
+  description="Biographie et démarche artistique de Roddy AGBO, animateur 2D, illustrateur et artiste visuel béninois."
+  lang={lang}
+>
+  <div class="container about-page">
+    <header class="about-header">
+      <h1 class="page-title">{t('about.title')}</h1>
+      <p class="page-lead">{t('about.subtitle')}</p>
+    </header>
+
+    <div class="about-grid">
+      <div class="portrait-col">
+        <div class="portrait-frame">
+          <picture>
+            <source srcset="/images/roddy-agbo.webp" type="image/webp" />
+            <img 
+              src="/images/roddy-agbo.jpg" 
+              alt="Portrait de Roddy AGBO" 
+              width="800" 
+              height="1087" 
+              loading="eager" 
+              decoding="async" 
+              class="portrait-img" 
+            />
+          </picture>
+        </div>
+        <div class="meta-tag-card">
+          <span class="meta-label">{t('about.locationLabel')}</span>
+          <p class="meta-val">{t('about.locationValue')}</p>
+        </div>
+      </div>
+
+      <div class="bio-col">
+        <div class="bio-text">
+          <p>{t('about.bio1')}</p>
+          <p>{t('about.bio2')}</p>
+          <p>{t('about.bio3')}</p>
+        </div>
+
+        <div class="signature-quote">
+          <p>« {siteConfig.artist.signature} »</p>
+        </div>
+
+        <section class="skills-section">
+          <h2 class="sub-heading">{t('about.skillsTitle')}</h2>
+          <ul class="skills-list">
+            <li>{t('about.skill1')}</li>
+            <li>{t('about.skill2')}</li>
+            <li>{t('about.skill3')}</li>
+            <li>{t('about.skill4')}</li>
+          </ul>
+        </section>
+
+        <section class="software-section">
+          <h2 class="sub-heading">{t('about.softwareTitle')}</h2>
+          <p class="software-list">Clip Studio Paint · TVPaint · Photoshop · After Effects · Premiere Pro</p>
+        </section>
+        <div class="about-contact-box">
+          <p>{t('about.contactPrompt')}</p>
+          <a href="/fr/contact" class="cta-link">{t('footer.contactMe')} &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .about-header {
+    margin-bottom: 4rem;
+    max-width: 800px;
+  }
+
+  .page-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.15rem;
+    color: var(--color-muted);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 5fr 7fr;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+  }
+
+  .portrait-frame {
+    width: 100%;
+    background: #E5E5E5;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .portrait-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .meta-tag-card {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .meta-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .meta-val {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+
+  .signature-quote {
+    margin: 2.5rem 0;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--color-text);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-muted);
+  }
+
+  .skills-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .sub-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  .skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 600px) {
+    .skills-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .skills-list li {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .software-section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .software-list {
+    color: var(--color-muted);
+    line-height: 1.8;
+  }
+  .about-contact-box {
+    margin-top: 3rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .cta-link {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,1051 @@
+---
+import type { Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+import VideoFacade from '../VideoFacade.astro';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const isFr = lang === 'fr';
+
+const primaryVideo = project.videos && project.videos.length > 0 ? project.videos[0] : null;
+const primaryImage = project.images && project.images.length > 0 ? project.images[0] : null;
+const additionalImages = project.images && project.images.length > 1 ? project.images.slice(1) : [];
+
+// Specific modular data blocks (present for flagship film like L'art ou la rue)
+const specs = project.specs;
+const kitsu = project.kitsu;
+const storyboardSec = project.storyboardSection;
+const decorsSec = project.decorsSection;
+const soundtrackSec = project.soundtrackSection;
+const seriesSec = project.seriesSection;
+const dreamTeam = project.dreamTeam;
+
+const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Film Excerpts";
+---
+
+<article class="project-detail film-detail">
+  <!-- En-tête du projet -->
+  <header class="detail-header">
+    <div class="category-tags">
+      {project.categories.map((cat: string) => (
+        <span class="category-tag">{cat}</span>
+      ))}
+    </div>
+    <h1 class="project-title">{isFr ? project.title.fr : project.title.en}</h1>
+    <p class="project-lead">{isFr ? project.summary.fr : project.summary.en}</p>
+  </header>
+
+  <!-- Média principal / Showreel Teaser -->
+  <div class="main-media">
+    {primaryVideo ? (
+      primaryVideo.platform === 'local' ? (
+        <div class="local-video-wrapper">
+          <video 
+            controls 
+            controlslist="nodownload noplaybackrate"
+            disablepictureinpicture
+            oncontextmenu="return false;"
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            poster={primaryImage ? primaryImage.src : undefined}
+            class="local-video-player"
+          >
+            <source src={primaryVideo.id} type="video/mp4" />
+            {isFr ? "Votre navigateur ne supporte pas la lecture vidéo." : "Your browser does not support HTML5 video."}
+          </video>
+        </div>
+      ) : (
+        <VideoFacade 
+          platform={primaryVideo.platform} 
+          id={primaryVideo.id} 
+          coverImage={primaryImage ? primaryImage.src : undefined} 
+          title={isFr ? project.title.fr : project.title.en} 
+        />
+      )
+    ) : primaryImage ? (
+      <div class="showreel-teaser-wrapper">
+        <div class="showreel-hero-img-container">
+          <img 
+            src={primaryImage.src} 
+            alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
+            width={primaryImage.width} 
+            height={primaryImage.height} 
+            class="showreel-hero-img" 
+            oncontextmenu="return false;"
+          />
+          <div class="showreel-overlay">
+            <div class="showreel-badge">
+              <span class="play-icon" aria-hidden="true">▶</span>
+              <span class="badge-text">{isFr ? "Showreel Teaser & Extraits" : "Showreel Teaser & Excerpts"}</span>
+              {specs && specs.duration && (
+                <span class="duration-pill">{isFr ? specs.duration.fr : specs.duration.en}</span>
+              )}
+            </div>
+            <div class="showreel-notice">
+              <p>{isFr ? "Court métrage en circuit festivals • Démonstration privée & visionnage intégral sur demande" : "Film in festival distribution • Private screener available on request"}</p>
+            </div>
+          </div>
+        </div>
+        {primaryImage.caption && (
+          <figcaption class="media-caption">{isFr ? primaryImage.caption.fr : primaryImage.caption.en}</figcaption>
+        )}
+      </div>
+    ) : null}
+  </div>
+
+  <!-- Barre de caractéristiques techniques (Film Specs Bar) -->
+  {specs && (
+    <div class="specs-ribbon" aria-label={isFr ? "Caractéristiques du film" : "Film specifications"}>
+      <div class="specs-grid">
+        {specs.duration && (
+          <div class="spec-item">
+            <span class="spec-label">{isFr ? "Durée" : "Duration"}</span>
+            <span class="spec-value">{isFr ? specs.duration.fr : specs.duration.en}</span>
+          </div>
+        )}
+        {specs.technique && (
+          <div class="spec-item">
+            <span class="spec-label">{isFr ? "Technique" : "Technique"}</span>
+            <span class="spec-value">{isFr ? specs.technique.fr : specs.technique.en}</span>
+          </div>
+        )}
+        {specs.genre && (
+          <div class="spec-item">
+            <span class="spec-label">{isFr ? "Genre & Cible" : "Genre & Target"}</span>
+            <span class="spec-value">{isFr ? specs.genre.fr : specs.genre.en} ({isFr ? specs.target.fr : specs.target.en})</span>
+          </div>
+        )}
+        {specs.country && (
+          <div class="spec-item">
+            <span class="spec-label">{isFr ? "Origine & Année" : "Origin & Year"}</span>
+            <span class="spec-value">{isFr ? specs.country.fr : specs.country.en} • {specs.year}</span>
+          </div>
+        )}
+        {specs.program && (
+          <div class="spec-item spec-item-full">
+            <span class="spec-label">{isFr ? "Cadre de production" : "Production Framework"}</span>
+            <span class="spec-value highlight-accent">{isFr ? specs.program.fr : specs.program.en}</span>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+
+  <!-- Grille principale de contenu : Synopsis, Rôle et Équipe -->
+  <div class="content-grid">
+    <div class="content-main">
+      <section class="section-block">
+        <h2 class="section-heading">{t('project.contextTitle')}</h2>
+        <div class="text-prose">
+          {isFr ? project.description.fr.split('\n\n').map((p: string) => <p>{p}</p>) : project.description.en.split('\n\n').map((p: string) => <p>{p}</p>)}
+        </div>
+      </section>
+
+      <section class="section-block highlight-role">
+        <h2 class="section-heading">{t('project.roleTitle')}</h2>
+        <div class="text-prose">
+          {isFr ? project.role.fr.split('\n\n').map((p: string) => <p>{p}</p>) : project.role.en.split('\n\n').map((p: string) => <p>{p}</p>)}
+        </div>
+      </section>
+    </div>
+
+    <aside class="content-sidebar">
+      {project.credits && project.credits.length > 0 && (
+        <div class="sidebar-block">
+          <h3 class="sidebar-title">{t('project.creditsTitle')}</h3>
+          <ul class="credits-list">
+            {project.credits.map((c: any) => (
+              <li>
+                <span class="credit-role">{c.role}</span>
+                <span class="credit-name">{c.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </aside>
+  </div>
+
+  <!-- SECTION DÉDIÉE : PIPELINE KITSU (Direction de Production) -->
+  {kitsu && (
+    <section class="kitsu-section" id="pipeline-kitsu">
+      <div class="section-header-box">
+        <span class="section-pill">Kitsu • CGWire</span>
+        <h2 class="section-heading-large">{isFr ? kitsu.title.fr : kitsu.title.en}</h2>
+        <p class="section-intro-text">{isFr ? kitsu.intro.fr : kitsu.intro.en}</p>
+      </div>
+
+      <div class="kitsu-cards-grid">
+        {kitsu.items.map((item: any) => (
+          <div class="kitsu-card">
+            <div class="kitsu-card-img-wrap">
+              <picture>
+                <source srcset={item.image.replace('.png', '.webp')} type="image/webp" />
+                <img 
+                  src={item.image} 
+                  alt={isFr ? item.title.fr : item.title.en} 
+                  loading="lazy" 
+                  width="1280" 
+                  height="720" 
+                  class="kitsu-card-img" 
+                  oncontextmenu="return false;"
+                />
+              </picture>
+              <span class="kitsu-tag">{isFr ? item.tag.fr : item.tag.en}</span>
+            </div>
+            <div class="kitsu-card-body">
+              <h3 class="kitsu-card-title">{isFr ? item.title.fr : item.title.en}</h3>
+              <p class="kitsu-card-desc">{isFr ? item.description.fr : item.description.en}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- SECTION DÉDIÉE : STORYBOARD & DÉCOUPAGE -->
+  {storyboardSec && (
+    <section class="storyboard-section" id="storyboard">
+      <div class="section-header-box">
+        <h2 class="section-heading-large">{isFr ? storyboardSec.title.fr : storyboardSec.title.en}</h2>
+        <p class="section-intro-text">{isFr ? storyboardSec.intro.fr : storyboardSec.intro.en}</p>
+      </div>
+
+      <figure class="storyboard-figure">
+        <div class="storyboard-img-container">
+          <picture>
+            <source srcset={storyboardSec.image.replace('.jpg', '.webp')} type="image/webp" />
+            <img 
+              src={storyboardSec.image} 
+              alt={isFr ? storyboardSec.title.fr : storyboardSec.title.en} 
+              loading="lazy" 
+              width="1920" 
+              height="1080" 
+              class="storyboard-img" 
+              oncontextmenu="return false;"
+            />
+          </picture>
+        </div>
+        {storyboardSec.details && (
+          <figcaption class="storyboard-caption">
+            {isFr ? storyboardSec.details.fr : storyboardSec.details.en}
+          </figcaption>
+        )}
+      </figure>
+    </section>
+  )}
+
+  <!-- SECTION DÉDIÉE : DÉCORS EMBLÉMATIQUES -->
+  {decorsSec && (
+    <section class="decors-section" id="decors">
+      <div class="section-header-box">
+        <h2 class="section-heading-large">{isFr ? decorsSec.title.fr : decorsSec.title.en}</h2>
+        <p class="section-intro-text">{isFr ? decorsSec.intro.fr : decorsSec.intro.en}</p>
+      </div>
+
+      <div class="decors-grid">
+        {decorsSec.items.map((item: any) => (
+          <div class="decor-card">
+            <div class="decor-img-wrap">
+              <picture>
+                <source srcset={item.image.replace('.jpg', '.webp')} type="image/webp" />
+                <img 
+                  src={item.image} 
+                  alt={isFr ? item.title.fr : item.title.en} 
+                  loading="lazy" 
+                  width="1215" 
+                  height="684" 
+                  class="decor-img" 
+                  oncontextmenu="return false;"
+                />
+              </picture>
+            </div>
+            <div class="decor-body">
+              <h3 class="decor-title">{isFr ? item.title.fr : item.title.en}</h3>
+              <p class="decor-desc">{isFr ? item.description.fr : item.description.en}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- SECTION DOUBLE : BANDE SONORE & SÉRIE TV -->
+  {(soundtrackSec || seriesSec) && (
+    <section class="features-dual-section">
+      <div class="features-dual-grid">
+        {soundtrackSec && (
+          <div class="feature-card soundtrack-card">
+            <span class="feature-badge">100% Bénin • Fon</span>
+            <h3 class="feature-card-title">{isFr ? soundtrackSec.title.fr : soundtrackSec.title.en}</h3>
+            <p class="feature-card-text">{isFr ? soundtrackSec.description.fr : soundtrackSec.description.en}</p>
+          </div>
+        )}
+
+        {seriesSec && (
+          <div class="feature-card series-card">
+            <span class="feature-badge">26 x 11 min • Canal+</span>
+            <h3 class="feature-card-title">{isFr ? seriesSec.title.fr : seriesSec.title.en}</h3>
+            <p class="feature-card-text">{isFr ? seriesSec.concept.fr : seriesSec.concept.en}</p>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- SECTION DREAM TEAM : COLLECTIF DE RÉALISATION -->
+  {dreamTeam && (
+    <section class="dream-team-section" id="dream-team">
+      <div class="section-header-box">
+        <h2 class="section-heading-large">{isFr ? dreamTeam.title.fr : dreamTeam.title.en}</h2>
+        <p class="section-intro-text">{isFr ? dreamTeam.intro.fr : dreamTeam.intro.en}</p>
+      </div>
+
+      <div class="dream-team-content">
+        {dreamTeam.image && (
+          <div class="dream-team-photo-wrap">
+            <picture>
+              <source srcset={dreamTeam.image.replace('.jpg', '.webp')} type="image/webp" />
+              <img 
+                src={dreamTeam.image} 
+                alt="Dream Team — L'Art ou la Rue" 
+                loading="lazy" 
+                width="1920" 
+                height="1379" 
+                class="dream-team-photo" 
+                oncontextmenu="return false;"
+              />
+            </picture>
+            <p class="dream-team-photo-caption">
+              {isFr ? "L'équipe du film à Incub'IMA (Sèmè City & Gobelins Paris)" : "The film crew at Incub'IMA (Sèmè City & Gobelins Paris)"}
+            </p>
+          </div>
+        )}
+
+        <div class="dream-team-grid">
+          {dreamTeam.members.map((m: any) => (
+            <div class="member-card">
+              <span class="member-name">{m.name}</span>
+              <span class="member-role">{isFr ? m.role.fr : m.role.en}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FALLBACK GALERIE STANDARD (Pour les autres projets comme Carte AFIA) -->
+  {!kitsu && additionalImages.length > 0 && (
+    <section class="visuals-section">
+      <h2 class="section-heading">{visualsHeading}</h2>
+      <div class="visuals-gallery">
+        {additionalImages.map((img: any) => (
+          <figure class="visual-figure">
+            <div class="visual-img-container" style={`aspect-ratio: ${img.width} / ${img.height};`}>
+              <img 
+                src={img.src} 
+                alt={isFr ? img.alt.fr : img.alt.en} 
+                width={img.width} 
+                height={img.height} 
+                loading="lazy" 
+                class="visual-img" 
+                oncontextmenu="return false;"
+              />
+            </div>
+            {img.caption && (
+              <figcaption class="visual-caption">
+                {isFr ? img.caption.fr : img.caption.en}
+              </figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+</article>
+
+<style>
+  .project-detail {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+
+  .detail-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-tag {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    background-color: var(--color-border);
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 768px) {
+    .project-title {
+      font-size: 3.5rem;
+    }
+  }
+
+  .project-lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 820px;
+  }
+
+  /* Main media & Showreel */
+  .main-media {
+    margin-bottom: 3.5rem;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .local-video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000000;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .local-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    outline: none;
+  }
+
+  .showreel-teaser-wrapper {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: #111111;
+  }
+
+  .showreel-hero-img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .showreel-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .showreel-hero-img-container:hover .showreel-hero-img {
+    transform: scale(1.02);
+  }
+
+  .showreel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    color: #FFFFFF;
+  }
+
+  .showreel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(23, 23, 23, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+  }
+
+  .play-icon {
+    font-size: 0.85rem;
+    color: #00D2A0;
+  }
+
+  .badge-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .duration-pill {
+    background: #00D2A0;
+    color: #111111;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .showreel-notice p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 640px;
+  }
+
+  .media-caption {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    padding: 0.75rem 0.5rem 0;
+    font-style: italic;
+  }
+
+  /* Specs Ribbon */
+  .specs-ribbon {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .specs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .specs-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .spec-item-full {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .spec-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .spec-value {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .highlight-accent {
+    color: #171717;
+    font-weight: 700;
+  }
+
+  /* Content Grid */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .section-block {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .text-prose p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  .highlight-role {
+    background-color: #F3F1EC;
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--color-text);
+  }
+
+  .highlight-role .section-heading {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .sidebar-block {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .sidebar-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .credits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .credit-role {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+
+  .credit-name {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  /* Shared Section Headers */
+  .section-header-box {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background-color: #E2ECE9;
+    color: #0F5132;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading-large {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-heading-large {
+      font-size: 2.25rem;
+    }
+  }
+
+  .section-intro-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--color-muted);
+    max-width: 820px;
+  }
+
+  /* KITSU SECTION */
+  .kitsu-section {
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 4.5rem;
+  }
+
+  .kitsu-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .kitsu-cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .kitsu-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .kitsu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .kitsu-card-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #151A23;
+    overflow: hidden;
+  }
+
+  .kitsu-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .kitsu-tag {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    background: rgba(21, 26, 35, 0.85);
+    color: #00D2A0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .kitsu-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .kitsu-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .kitsu-card-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
+  /* STORYBOARD SECTION */
+  .storyboard-section {
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 4.5rem;
+  }
+
+  .storyboard-figure {
+    margin: 0;
+  }
+
+  .storyboard-img-container {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: #111111;
+    border: 1px solid var(--color-border);
+  }
+
+  .storyboard-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .storyboard-caption {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-top: 0.85rem;
+    font-style: italic;
+  }
+
+  /* DECORS SECTION */
+  .decors-section {
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 4.5rem;
+  }
+
+  .decors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .decors-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .decor-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .decor-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #222222;
+    overflow: hidden;
+  }
+
+  .decor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .decor-card:hover .decor-img {
+    transform: scale(1.03);
+  }
+
+  .decor-body {
+    padding: 1.25rem;
+  }
+
+  .decor-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--color-text);
+  }
+
+  .decor-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--color-muted);
+  }
+
+  /* FEATURES DUAL SECTION (Musique & Série) */
+  .features-dual-section {
+    padding-top: 2rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .features-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .features-dual-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .feature-card {
+    background-color: #F8F7F4;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 2.25rem;
+  }
+
+  .feature-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background-color: #171717;
+    color: #FAF9F6;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .feature-card-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  /* DREAM TEAM SECTION */
+  .dream-team-section {
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+  }
+
+  .dream-team-photo-wrap {
+    margin-bottom: 2rem;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+  }
+
+  .dream-team-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .dream-team-photo-caption {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    font-style: italic;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    background-color: #FAF9F6;
+  }
+
+  .dream-team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .dream-team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .dream-team-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .member-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .member-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .member-role {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+
+  /* Standard Visuals Gallery Fallback */
+  .visuals-section {
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .visuals-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .visuals-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .visual-img-container {
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .visual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .visual-caption {
+    font-size: 0.88rem;
+    color: var(--color-text);
+    margin-top: 0.6rem;
+    font-weight: 500;
+  }
+</style>

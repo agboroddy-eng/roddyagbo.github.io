@@ -1,0 +1,72 @@
+{
+  "title": {
+    "en": "Artbook Vol. 1 — Visual Journeys",
+    "fr": "Artbook Vol. 1 — Voyages Visuels"
+  },
+  "slug": "artbook-vol-1",
+  "type": "book",
+  "categories": [
+    "Books"
+  ],
+  "description": {
+    "en": "Collected personal artworks, preliminary animation sketches, and visual development explorations by Roddy AGBO. 100% personal work.",
+    "fr": "Recueil d'illustrations personnelles, de croquis préparatoires d'animation et de recherches visuelles par Roddy AGBO. Œuvres 100% personnelles uniquement."
+  },
+  "details": {
+    "dimensions": "21 x 28 cm - 96 pages",
+    "material": "Papier couché mat 170g / m²",
+    "finish": "Couverture cartonnée rigide avec dos toilé",
+    "year": "2024"
+  },
+  "variants": [
+    {
+      "name": {
+        "en": "Standard Edition",
+        "fr": "Édition Standard"
+      },
+      "priceXof": "[À REMPLIR]",
+      "sku": "BOOK-ART-VOL1",
+      "fedapayUrl": ""
+    }
+  ],
+  "currency": "XOF",
+  "availability": "coming-soon",
+  "fulfillment": {
+    "method": "print-on-demand",
+    "provider": "[À CHOISIR]",
+    "productionDays": "[À REMPLIR]"
+  },
+  "edition": "open",
+  "stock": "",
+  "images": [
+    {
+      "src": "/images/products/artbook.svg",
+      "alt": {
+        "en": "Artbook Vol 1 cover placeholder",
+        "fr": "Couverture de l'artbook Vol 1"
+      },
+      "width": 800,
+      "height": 1050,
+      "ratio": "3:4"
+    }
+  ],
+  "relatedSeries": "Univers narratifs",
+  "shippingProfile": "standard",
+  "checkout": {
+    "mode": "none",
+    "url": ""
+  },
+  "featured": false,
+  "order": 4,
+  "published": false,
+  "seo": {
+    "title": {
+      "en": "Artbook Vol. 1 — Roddy AGBO Shop",
+      "fr": "Artbook Vol. 1 — Boutique Roddy AGBO"
+    },
+    "description": {
+      "en": "Personal artbook featuring sketches, concepts and illustrations by 2D animator Roddy AGBO.",
+      "fr": "Artbook personnel réunissant croquis, concepts et illustrations de Roddy AGBO."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const lang = 'fr';
+---
+
+<Layout title="Conditions Générales de Vente" description="Conditions de vente et politique de propriété intellectuelle." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">Conditions Générales de Vente (CGV)</h1>
+      <p class="disclaimer-tag">Modèle indicatif — à faire valider par un professionnel du droit.</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Champ d'application & Droits d'auteur</h2>
+        <p>L'ensemble des illustrations, dessins, animations et créations présentés sur ce site et proposés dans la boutique sont la propriété intellectuelle exclusive de <strong>Roddy AGBO</strong>.</p>
+        <p><strong>Règle fondamentale :</strong> L'achat d'un tirage, d'un livre ou d'un objet dérivé ne transfère que la propriété du support matériel physique. <strong>Il ne confère aucun droit de reproduction, de numérisation, d'adaptation ou d'exploitation commerciale.</strong> Toute utilisation non autorisée constitue une contrefaçon.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Prix et Règlement</h2>
+        <p>Les prix sont libellés en francs CFA (XOF). Les paiements sont sécurisés et traités via la passerelle de paiement FedaPay (Mobile Money et cartes bancaires selon disponibilité). Ce site ne collecte ni ne stocke aucune coordonnée bancaire.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Commandes sur mesure (Commissions)</h2>
+        <p>Les commandes d'illustrations personnalisées pour particuliers ou professionnels font l'objet d'un accord spécifique et passent par le formulaire de contact.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+</style>

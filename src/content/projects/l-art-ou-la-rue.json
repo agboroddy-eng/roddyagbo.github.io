@@ -1,0 +1,392 @@
+{
+  "title": {
+    "en": "L'art ou la rue",
+    "fr": "L'art ou la rue"
+  },
+  "slug": "l-art-ou-la-rue",
+  "categories": [
+    "Animation 2D",
+    "Direction artistique",
+    "Storyboard & Visual Development"
+  ],
+  "type": "film",
+  "featured": true,
+  "order": 1,
+  "status": "published",
+  "summary": {
+    "en": "In Cotonou, 16-year-old Kodjo plans his gang's heists with his gift for drawing — until a passionate street artist reveals that art could also become his way out.",
+    "fr": "À Cotonou, Kodjo, 16 ans, planifie les casses de sa bande grâce à son talent pour le dessin — jusqu'à ce qu'une street-artiste lui révèle que ce talent pourrait aussi être sa porte de sortie."
+  },
+  "description": {
+    "en": "At 16, Kodjo is the mastermind of the 3K, a small gang of teenage burglars surviving in Cotonou. He puts his innate drawing talent at the service of their heists, plotting blueprints and escape routes. His chosen family consists of Kora and Kamal, his brothers in adversity, united by their oath: 'We fall together, we rise together.' After a heist nearly turns disastrous, Kodjo crosses paths with Akila, an inspiring street artist working on a monumental wall mural. For the first time, he sees himself reflected in an artwork and in another human being. This encounter shatters his certainties, confronting him with a decisive crossroads: remain loyal to his street brotherhood, or forge a new life trajectory guided by artistic creation.",
+    "fr": "À Cotonou, Kodjo, 16 ans, est le cerveau des 3K, un petit groupe de cambrioleurs. Son talent inné pour le dessin, il le met au service de leurs casses en traçant plans et repérages. Sa famille, ce sont Kora et Kamal, ses frères de galère, unis par une devise sans concession : « On tombe ensemble, on se relève ensemble. » Après un casse qui a failli mal tourner, Kodjo croise Akila, une street-artiste passionnée et inspirante en train de peindre une fresque monumentale. Pour la première fois, il se reconnaît dans une œuvre et dans quelqu'un. Cette rencontre ébranle ses certitudes et l'oblige à un choix décisif : rester fidèle à ses frères de galère, ou emprunter une nouvelle voie, guidée par l'art."
+  },
+  "role": {
+    "en": "Dual strategic responsibility on this flagship animated production developed within Incub'IMA (Sèmè City & Gobelins Paris):\n\n1. Production Manager & Kitsu Pipeline Architect: Complete setup and daily management of the production workflow on Kitsu (CGWire). Tracking all 19 shots and sequences across every milestone (animatic, layout, rough animation, clean-up, coloring), centralizing the asset library (characters, Cotonou backgrounds, props), dispatching tasks across the 6-person team, and coordinating delivery reviews for Gobelins Paris and Sèmè City.\n\n2. Storyboard, Layout & 2D Animation Artist: Active contribution to the technical breakdown, animatic staging, background layouts, and rough character animation on key narrative sequences.",
+    "fr": "Double responsabilité stratégique sur cette production majeure développée au sein d'Incub'IMA (Sèmè City & Gobelins Paris) :\n\n1. Chargé de Production & Gestion du Pipeline Kitsu : Déploiement et administration quotidienne du pipeline de production sur le logiciel Kitsu (CGWire). Suivi des 19 plans/séquences (animatique, layout, animation rough, clean-up, colorisation), gestion centralisée de la banque d'assets (personnages, décors de Cotonou, accessoires), dispatch des tâches au sein de l'équipe (6 artistes), suivi du calendrier et respect des jalons d'évaluation Gobelins Paris et Sèmè City.\n\n2. Artiste Storyboard, Layout & Animation 2D : Contribution active au découpage technique, à la mise en scène de l'animatique, aux layouts de décors et à l'animation rough de séquences clés du court métrage."
+  },
+  "specs": {
+    "duration": {
+      "en": "8 min 10 s",
+      "fr": "8 min 10 s"
+    },
+    "technique": {
+      "en": "Traditional 2D Digital Animation",
+      "fr": "Animation traditionnelle 2D numérique"
+    },
+    "genre": {
+      "en": "Drama / Coming-of-age",
+      "fr": "Drame social / Récit initiatique"
+    },
+    "target": {
+      "en": "12+ (Teens & Young Adults)",
+      "fr": "À partir de 12 ans (Ados & Jeunes adultes)"
+    },
+    "country": {
+      "en": "Benin (Cotonou)",
+      "fr": "Bénin (Cotonou)"
+    },
+    "year": "2026",
+    "format": {
+      "en": "Animated Short Film (4K DCI, 16:9)",
+      "fr": "Court métrage d'animation (4K DCI, 16:9)"
+    },
+    "program": {
+      "en": "Incub'IMA (Sèmè City & Gobelins Paris)",
+      "fr": "Incub'IMA (Sèmè City & Gobelins Paris)"
+    }
+  },
+  "kitsu": {
+    "title": {
+      "en": "Production Pipeline & Task Tracking on Kitsu",
+      "fr": "Pipeline de Production & Suivi d'Équipe sur Kitsu"
+    },
+    "intro": {
+      "en": "As Production Manager, I structured and led the entire digital pipeline on Kitsu (CGWire), the industry-standard production management platform. From sequence breakdowns to delivery milestones with Sèmè City and Gobelins Paris, this rigorous framework ensured artistic coherence, deadline discipline, and seamless collaboration across our 6-artist team.",
+      "fr": "En tant que chargé de production, j'ai structuré et piloté l'ensemble de la fabrication du film sur Kitsu (CGWire), plateforme de référence pour les studios d'animation. Du découpage des séquences jusqu'aux revues d'étape avec Sèmè City et les Gobelins Paris, ce cadre méthodologique a garanti la fluidité du travail d'équipe, le respect des délais et la cohérence artistique des 19 plans."
+    },
+    "items": [
+      {
+        "id": "shots",
+        "tag": {
+          "en": "Shot Review & Validation",
+          "fr": "Suivi des Plans & Validation"
+        },
+        "title": {
+          "en": "Shot Tracking & Task Status (19 Plans)",
+          "fr": "Suivi séquentiel des 19 plans"
+        },
+        "description": {
+          "en": "Granular shot progression across all production stages: Animatic, Background Layout, Rough Animation, Clean-up, and Color. Instant review status (Approved, In Progress, Retake, WFA) with director notes and artist assignments.",
+          "fr": "Suivi détaillé de l'avancement plan par plan : Animatique, Layout décors, Rough animation, Clean-up et Colorisation. Arbitrage immédiat des retours (Validé, En cours, Retake, WFA) et coordination des corrections."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/kitsu-shots.webp"
+      },
+      {
+        "id": "assets",
+        "tag": {
+          "en": "Asset Library & Turnarounds",
+          "fr": "Banque d'Assets & Modèles"
+        },
+        "title": {
+          "en": "Centralized Character & Background Assets",
+          "fr": "Modèles Personnages, Décors & Accessoires"
+        },
+        "description": {
+          "en": "Centralized repository for character model sheets (Kodjo, Akila, Kora, Kamal, Tanyi), Cotonou background color keys, and key props (animal masks, spray cans), ensuring visual continuity across all animators.",
+          "fr": "Gestion centralisée des model sheets des personnages (Kodjo, Akila, Kora, Kamal, Tanyi), des clés couleurs de décors et des accessoires clés (masques animaux des 3K, bombes de peinture), garantissant la continuité graphique."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/kitsu-assets.webp"
+      },
+      {
+        "id": "planning",
+        "tag": {
+          "en": "Gantt Timeline & Milestones",
+          "fr": "Planning de Production & Jalons"
+        },
+        "title": {
+          "en": "Production Schedule & Incub'IMA Milestones",
+          "fr": "Calendrier de production & Jalons Incub'IMA"
+        },
+        "description": {
+          "en": "Production roadmap mapping pre-production, animation sprints, compositing, and sound mix. Workload balancing across the collective and strict milestone management for Sèmè City and Gobelins Paris mentor reviews.",
+          "fr": "Feuille de route globale calée sur 5 mois : pré-production, sprints d'animation 2D, compositing et mixage sonore. Lissage de la charge de travail et synchronisation des revues avec les mentors des Gobelins Paris et de Sèmè City."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/kitsu-planning.webp"
+      }
+    ]
+  },
+  "storyboardSection": {
+    "title": {
+      "en": "Storyboard & Narrative Color Script",
+      "fr": "Storyboard & Color Script Narratif"
+    },
+    "intro": {
+      "en": "Complete 36-frame color board and animatic breakdown illustrating the visual transformation of the film. The chromatic progression moves intentionally from cold, muted blue tones during nocturnal alley break-ins to warm, luminous saturation when Kodjo encounters Akila's vibrant street mural.",
+      "fr": "Planche complète des 36 plans et découpage en animatique illustrant l'évolution narrative et chromatique du film. La progression visuelle glisse délibérément des teintes froides et bleutées des cambriolages nocturnes vers la chaleur lumineuse et solaire de la fresque d'Akila."
+    },
+    "image": "/images/projects/l-art-ou-la-rue/storyboard-board.webp",
+    "details": {
+      "en": "Technique: Digital Storyboard & Color Script (16:9 widescreen ratio, 36 key sequences).",
+      "fr": "Technique : Storyboard numérique et color script (format panoramique 16:9, 36 plans clés)."
+    }
+  },
+  "decorsSection": {
+    "title": {
+      "en": "Iconic Backgrounds & Cotonou Urban Atmosphere",
+      "fr": "Trois Décors Emblématiques & Ambiance de Cotonou"
+    },
+    "intro": {
+      "en": "Far from generic folklore, the visual universe of 'L'art ou la rue' captures the living pulse of contemporary Cotonou — from secretive night alleys to sun-drenched avenues and sprawling urban crossroads.",
+      "fr": "Loin de tout folklore conventionnel, l'univers visuel de « L'art ou la rue » capte l'énergie brute et vivante de Cotonou aujourd'hui — entre ruelles secrètes de nuit, terre rouge et grands murs urbains baignés de soleil."
+    },
+    "items": [
+      {
+        "id": "decor-nuit",
+        "title": {
+          "en": "1. The Night Alleyway (The 3K Heist)",
+          "fr": "1. La ruelle de nuit & le casse des 3K"
+        },
+        "description": {
+          "en": "Atmospheric, tense nocturnal setting where Kodjo, Kora, and Kamal execute their masked break-ins beneath deep shadows and dim sodium streetlamps.",
+          "fr": "Ambiance nocturne sous haute tension, jeux d'ombres et lumières blafardes des venelles de Cotonou où les 3K opèrent masqués pour leurs casses."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/decor-cotonou-nuit.webp"
+      },
+      {
+        "id": "decor-fresque",
+        "title": {
+          "en": "2. Akila's Monumental Mural ('Nudidé')",
+          "fr": "2. Le mur de la fresque monumentale (« Nudidé »)"
+        },
+        "description": {
+          "en": "The spiritual and dramatic core of the film: an imposing open-air wall bursting with color where Kodjo witnesses street art in the making and discovers his true calling as a creator.",
+          "fr": "Le cœur émotionnel et narratif du court métrage : un immense pan de mur en plein air où Kodjo découvre le street art d'Akila et s'éveille à sa véritable vocation de créateur."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/decor-fresque-akila.webp"
+      },
+      {
+        "id": "decor-aerien",
+        "title": {
+          "en": "3. Cotonou Crossroads & Rooftop Horizon",
+          "fr": "3. Le carrefour et l'horizon urbain de Cotonou"
+        },
+        "description": {
+          "en": "Sweeping panoramic perspective over Cotonou at dusk, showcasing zinc roofs, red laterite dirt roads, and the vibrant tempo of West African youth.",
+          "fr": "Vue panoramique sur Cotonou au couchant, ses toitures de zinc, ses pistes de latérite rouge et la cadence trépidante de la jeunesse urbaine ouest-africaine."
+        },
+        "image": "/images/projects/l-art-ou-la-rue/decor-ville-aerien.webp"
+      }
+    ]
+  },
+  "soundtrackSection": {
+    "title": {
+      "en": "100% Beninese Soundtrack & Sonic Identity",
+      "fr": "Bande Sonore 100% Béninoise & Identité Culturelle"
+    },
+    "description": {
+      "en": "Created by emerging Beninese musical talents, the original score roots the film in vibrant cultural authenticity. The centerpiece track 'Nudidé' ('drawing' in Fon language) channels the infectious, driving rhythm of Angélique Kidjo's iconic 'Agolo' — a celebratory musical explosion marking the exact instant Kodjo embraces his destiny as an artist.",
+      "fr": "Portée par de jeunes talents émergents de la scène musicale béninoise, la bande sonore ancre le film dans une réalité vivante et contemporaine. Le morceau phare « Nudidé » (« dessin » en langue fon) s'inspire du rythme entraînant d'« Agolo » d'Angélique Kidjo : une musique dansante et festive qui incarne l'instant précis où Kodjo révèle sa véritable nature de créateur."
+    }
+  },
+  "seriesSection": {
+    "title": {
+      "en": "From Short Film to International TV Series",
+      "fr": "Du Court Métrage à la Série TV Internationale"
+    },
+    "concept": {
+      "en": "In Cotonou, four youth with buried talents survive in the streets. Each episode confronts a new dilemma, a fresh mural, and a choice between who they are and who they could become. Season 1 format: 26 episodes x 11 minutes (pairable in 22-min broadcast blocks, compatible with Canal+ and international streamers).",
+      "fr": "À Cotonou, quatre jeunes aux talents enfouis survivent dans la rue. Chaque épisode pose un nouveau dilemme, révèle une nouvelle fresque et un choix entre ce qu'ils sont et ce qu'ils pourraient devenir. Format Saison 1 : 26 épisodes x 11 minutes (diffusables en paires de 22 min, adaptées aux grilles de Canal+ et aux plateformes internationales)."
+    }
+  },
+  "dreamTeam": {
+    "title": {
+      "en": "The Production Collective (Dream Team)",
+      "fr": "Le Collectif de Réalisation (Dream Team)"
+    },
+    "intro": {
+      "en": "An ambitious collaborative journey produced by six passionate creators within Incub'IMA, uniting their vision and complementary skills to bring contemporary Beninese animation to global screens.",
+      "fr": "Une aventure collective de haut niveau portée par six créateurs passionnés au sein d'Incub'IMA, alliant leurs expertises et leur complémentarité pour hisser l'animation béninoise sur la scène internationale."
+    },
+    "image": "/images/projects/l-art-ou-la-rue/dream-team.webp",
+    "members": [
+      {
+        "name": "Raphaël CAKPO-HESSOU",
+        "role": {
+          "en": "Co-director & Visual Artist",
+          "fr": "Co-réalisateur & Artiste visuel"
+        }
+      },
+      {
+        "name": "Roddy AGBO",
+        "role": {
+          "en": "Production Manager, Storyboard & 2D Animator",
+          "fr": "Chargé de production, Storyboard & Animateur 2D"
+        }
+      },
+      {
+        "name": "Bodéric MIGAN",
+        "role": {
+          "en": "Co-director & 2D Animator",
+          "fr": "Co-réalisateur & Animateur 2D"
+        }
+      },
+      {
+        "name": "Pamela CHABLIS",
+        "role": {
+          "en": "Visual Development & Animator",
+          "fr": "Visual Development & Animatrice"
+        }
+      },
+      {
+        "name": "Nawal MAKOU",
+        "role": {
+          "en": "Background Artist & Animator",
+          "fr": "Artiste Décors & Animatrice"
+        }
+      },
+      {
+        "name": "Bassam BACHABI",
+        "role": {
+          "en": "Character Design & Animator",
+          "fr": "Character Designer & Animateur"
+        }
+      }
+    ]
+  },
+  "credits": [
+    {
+      "role": "Titre du projet",
+      "name": "L'Art ou la Rue"
+    },
+    {
+      "role": "Programme & Partenaires",
+      "name": "Incub'IMA (Sèmè City & Gobelins Paris)"
+    },
+    {
+      "role": "Chargé de production & Pipeline Kitsu",
+      "name": "Roddy AGBO"
+    },
+    {
+      "role": "Équipe de réalisation (Dream Team)",
+      "name": "Raphaël Cakpo-Hessou, Roddy Agbo, Bodéric Migan, Pamela Chablis, Nawal Makou, Bassam Bachabi"
+    },
+    {
+      "role": "Durée & Format",
+      "name": "8 min 10 s — Animation traditionnelle 2D numérique (4K DCI)"
+    },
+    {
+      "role": "Musique originale",
+      "name": "« Nudidé » (création 100% béninoise, hommage à Angélique Kidjo)"
+    },
+    {
+      "role": "Série en développement",
+      "name": "26 épisodes x 11 min (Saison 1)"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/l-art-ou-la-rue/cover.jpg",
+      "alt": {
+        "en": "L'art ou la rue — Key visual featuring Kodjo, Kora and Kamal with animal masks at dusk",
+        "fr": "L'art ou la rue — Visuel clé officiel présentant Kodjo, Kora et Kamal masqués au crépuscule"
+      },
+      "width": 1869,
+      "height": 1080,
+      "caption": {
+        "en": "Official Key Visual — Kodjo, Kora and Kamal at dusk overlooking Cotonou",
+        "fr": "Visuel officiel du court métrage — Kodjo, Kora et Kamal au crépuscule face à Cotonou"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/l-art-ou-la-rue/storyboard-board.jpg",
+      "alt": {
+        "en": "Storyboard and color script mosaic of 36 key scenes",
+        "fr": "Planche complète de storyboard et color script (mosaïque de 36 plans clés)"
+      },
+      "width": 1920,
+      "height": 1080,
+      "caption": {
+        "en": "Complete 36-frame color script and storyboard progression",
+        "fr": "Découpage séquentiel et évolution chromatique en 36 plans clés"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/l-art-ou-la-rue/decor-cotonou-nuit.jpg",
+      "alt": {
+        "en": "Nocturnal alley background in Cotonou — 3K heist setting",
+        "fr": "Décor de ruelle nocturne à Cotonou — Cadre du cambriolage des 3K"
+      },
+      "width": 1215,
+      "height": 684,
+      "caption": {
+        "en": "Setting 1: Nocturnal Cotonou alleyway",
+        "fr": "Décor 1 : Ruelle nocturne de Cotonou"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/l-art-ou-la-rue/decor-fresque-akila.jpg",
+      "alt": {
+        "en": "Monumental street art mural 'Nudidé' by Akila",
+        "fr": "Mur de la fresque monumentale « Nudidé » peinte par Akila"
+      },
+      "width": 1215,
+      "height": 684,
+      "caption": {
+        "en": "Setting 2: The monumental street art mural 'Nudidé'",
+        "fr": "Décor 2 : La fresque murale monumentale « Nudidé »"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/l-art-ou-la-rue/decor-ville-aerien.jpg",
+      "alt": {
+        "en": "Panoramic dusk landscape of Cotonou city crossroads",
+        "fr": "Vue panoramique de Cotonou au crépuscule — Carrefour et toitures"
+      },
+      "width": 1215,
+      "height": 684,
+      "caption": {
+        "en": "Setting 3: Panoramic view of Cotonou crossroads at sunset",
+        "fr": "Décor 3 : Panorama du carrefour de Cotonou au crépuscule"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/l-art-ou-la-rue/dream-team.jpg",
+      "alt": {
+        "en": "Dream Team — The six creators and directors of L'art ou la rue",
+        "fr": "Dream Team — Les six réalisateurs et animateurs de L'art ou la rue"
+      },
+      "width": 1920,
+      "height": 1379,
+      "caption": {
+        "en": "The Dream Team collective at Incub'IMA",
+        "fr": "L'équipe de réalisation (Dream Team) à Incub'IMA"
+      },
+      "ratio": "16:9"
+    }
+  ],
+  "videos": [
+    {
+      "platform": "local",
+      "id": "/videos/projects/l-art-ou-la-rue/showreel.mp4",
+      "title": "L'Art ou la Rue — Teaser & Showreel d'Animation"
+    }
+  ],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "L'art ou la rue — Animated Short Film & Production Pipeline | Roddy AGBO",
+      "fr": "L'art ou la rue — Court Métrage d'Animation & Pipeline Kitsu | Roddy AGBO"
+    },
+    "description": {
+      "en": "Flagship 2D animated film created under Incub'IMA (Sèmè City & Gobelins Paris). Production management, Kitsu pipeline administration, storyboard, and 2D animation by Roddy AGBO.",
+      "fr": "Court métrage d'animation 2D phare réalisé dans le cadre d'Incub'IMA (Sèmè City & Gobelins Paris). Direction de production, pipeline Kitsu, storyboard et animation 2D par Roddy AGBO."
+    }
+  }
+}

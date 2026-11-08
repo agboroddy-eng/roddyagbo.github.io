@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lang = 'en';
+---
+
+<Layout title="404 — Page Not Found" description="The requested page could not be found." lang={lang}>
+  <div class="container not-found-page">
+    <div class="not-found-content">
+      <span class="error-code">404</span>
+      <h1 class="error-title">Page not found</h1>
+      <p class="error-text">The artwork or page you are looking for has been moved or does not exist.</p>
+      <div class="actions">
+        <a href="/" class="btn-home">&larr; Return to Gallery</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .not-found-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem;
+    text-align: center;
+  }
+  .not-found-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .error-code {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-muted);
+    letter-spacing: 0.1em;
+  }
+  .error-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .error-text {
+    font-size: 1.05rem;
+    color: var(--color-muted);
+  }
+  .actions {
+    margin-top: 1rem;
+  }
+  .btn-home {
+    display: inline-block;
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.85rem 1.6rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+  }
+</style>

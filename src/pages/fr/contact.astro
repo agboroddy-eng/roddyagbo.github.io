@@ -1,0 +1,296 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import siteConfig from '../../../site.config.json';
+import { useTranslations } from '../../i18n/ui';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const artistEmail = siteConfig.contact.email !== '[À REMPLIR]' ? siteConfig.contact.email : 'contact@roddyagbo.com';
+const artistWhatsapp = siteConfig.contact.whatsapp !== '[À REMPLIR]' ? siteConfig.contact.whatsapp : '';
+---
+
+<Layout 
+  title="Contact" 
+  description="Contactez Roddy AGBO pour vos projets d'animation 2D, commandes d'illustrations jeunesse ou partenariats artistiques."
+  lang={lang}
+>
+  <div class="container contact-page">
+    <header class="contact-header">
+      <h1 class="page-title">{t('contact.title')}</h1>
+      <p class="page-lead">{t('contact.subtitle')}</p>
+    </header>
+
+    <div class="contact-grid">
+      <div class="form-col">
+        <form id="contact-form" class="clean-form">
+          <div class="form-group">
+            <label for="name">{t('contact.form.name')} <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom ou studio" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">{t('contact.form.email')} <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="contact@studio.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="projectType">{t('contact.form.projectType')}</label>
+            <select id="projectType" name="projectType">
+              <option value="Collaboration">{t('contact.form.typeCollab')}</option>
+              <option value="Commission">{t('contact.form.typeCommission')}</option>
+              <option value="Question Boutique">{t('contact.form.typeShop')}</option>
+              <option value="Autre">{t('contact.form.typeOther')}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">{t('contact.form.message')} <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Expliquez votre projet, les délais envisagés..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="mailto-btn" class="btn-submit">
+              {t('contact.form.sendMailto')} &rarr;
+            </button>
+            {artistWhatsapp && (
+              <button type="button" id="whatsapp-btn" class="btn-whatsapp">
+                {t('contact.form.sendWhatsApp')}
+              </button>
+            )}
+          </div>
+
+          <p class="form-notice">
+            {t('contact.form.directNotice')}
+          </p>
+        </form>
+      </div>
+
+      <aside class="info-col">
+        <div class="info-card">
+          <h2 class="card-heading">{t('contact.direct.title')}</h2>
+          
+          <div class="info-item">
+            <span class="info-label">{t('contact.direct.emailLabel')}</span>
+            <a href={`mailto:${artistEmail}`} class="info-link">{artistEmail}</a>
+          </div>
+
+          {artistWhatsapp && (
+            <div class="info-item">
+              <span class="info-label">{t('contact.direct.whatsappLabel')}</span>
+              <a href={`https://wa.me/${artistWhatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" class="info-link">
+                {artistWhatsapp}
+              </a>
+            </div>
+          )}
+
+          <div class="info-item">
+            <span class="info-label">{t('contact.direct.locationLabel')}</span>
+            <p class="info-text">{siteConfig.artist.location.fr}</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ artistEmail, artistWhatsapp }}>
+  function setupContact() {
+    const mailtoBtn = document.getElementById('mailto-btn');
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const typeInput = document.getElementById('projectType');
+    const msgInput = document.getElementById('message');
+
+    if (mailtoBtn) {
+      mailtoBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim() || 'Contact';
+        const senderEmail = emailInput.value.trim() || '';
+        const type = typeInput.value;
+        const msg = msgInput.value.trim() || '';
+
+        const subject = encodeURIComponent(`[${type}] Prise de contact de ${name}`);
+        const body = encodeURIComponent(`De: ${name} (${senderEmail})\nType de projet: ${type}\n\nMessage:\n${msg}`);
+
+        window.location.href = `mailto:${artistEmail}?subject=${subject}&body=${body}`;
+      });
+    }
+
+    if (whatsappBtn && artistWhatsapp) {
+      whatsappBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim() || 'Contact';
+        const type = typeInput.value;
+        const msg = msgInput.value.trim() || '';
+        const text = encodeURIComponent(`Bonjour Roddy, je suis ${name}. [${type}]: ${msg}`);
+        const cleanNumber = artistWhatsapp.replace(/[^0-9]/g, '');
+        window.open(`https://wa.me/${cleanNumber}?text=${text}`, '_blank');
+      });
+    }
+  }
+
+  setupContact();
+  document.addEventListener('astro:after-swap', setupContact);
+</script>
+
+<style>
+  .contact-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .contact-header {
+    margin-bottom: 3.5rem;
+    max-width: 760px;
+  }
+
+  .page-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-lead {
+    font-size: 1.15rem;
+    color: var(--color-muted);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 7fr 5fr;
+      gap: 5rem;
+    }
+  }
+
+  .clean-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .required {
+    color: #990000;
+  }
+
+  input, select, textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: #FFFFFF;
+    color: var(--color-text);
+    transition: border-color var(--transition-fast);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--color-text);
+    outline: none;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.85rem 1.6rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    transition: opacity var(--transition-fast);
+  }
+
+  .btn-submit:hover {
+    opacity: 0.9;
+  }
+
+  .btn-whatsapp {
+    background-color: #25D366;
+    color: #FFFFFF;
+    padding: 0.85rem 1.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    transition: opacity var(--transition-fast);
+  }
+
+  .btn-whatsapp:hover {
+    opacity: 0.9;
+  }
+
+  .form-notice {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+
+  .info-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .card-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .info-link {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .info-link:hover {
+    text-decoration: underline;
+  }
+
+  .info-text {
+    font-size: 0.92rem;
+    color: var(--color-text);
+  }
+</style>

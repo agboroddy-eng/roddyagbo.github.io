@@ -1,0 +1,96 @@
+{
+  "title": {
+    "en": "Carte AFIA — Explainer Animation",
+    "fr": "Carte AFIA — Vidéo explicative animée"
+  },
+  "slug": "carte-afia",
+  "categories": [
+    "Animation 2D"
+  ],
+  "type": "film",
+  "featured": true,
+  "order": 2,
+  "status": "published",
+  "summary": {
+    "en": "Conception and full production of a 1-minute explainer animated video for HealthBOOK Tech (Benin), introducing the rechargeable AFIA NFC health card to physicians and hospitals. Through a warm blend of 2D animation and motion design, the heroine Chantal guides viewers across every stage of the healthcare pathway: identification, consultation, billing, pharmacy, and laboratory.",
+    "fr": "Conception et réalisation intégrale d'une vidéo explicative d'environ 1 minute pour HealthBOOK Tech (Bénin), présentant la carte de santé rechargeable AFIA à puce NFC aux médecins et hôpitaux. À travers un mélange d'animation 2D et de motion design, nous suivons Chantal, une héroïne rassurante, dans chaque étape de son parcours de soins : identification, consultation, paiement à la caisse, pharmacie et laboratoire."
+  },
+  "description": {
+    "en": "Context:\nHealthBOOK Tech, a Beninese digital health company, develops an ecosystem integrating hospital management, a patient mobile app, and the rechargeable AFIA NFC health card. To engage medical professionals and healthcare facilities, the company commissioned a dynamic 1-minute video demonstrating its clinical and administrative adoption.\n\nChallenge:\nClearly and reassuringly explain a complete healthcare workflow in 60 seconds: patient identification, secure medical record access, cashier checkout, pharmacy fulfillment, laboratory testing, and mobile top-up, all while maintaining an empathetic, approachable tone.\n\nCreative & Technical Approach:\nI led the entire 3-week production pipeline end-to-end. Following brief analysis and scriptwriting, I developed a 19-shot technical breakdown and detailed storyboard. To embody the solution, I designed Chantal, a relatable patient navigating hospital environments painted in Photoshop. The animation merges expressive 2D character animation in TVPaint with crisp motion design in After Effects and Premiere Pro, elevated by professional voiceover and sound design.\n\nResult:\nThe video was enthusiastically validated and adopted by HealthBOOK Tech. This success fostered long-term trust, leading the client to commission two additional animated videos focusing on the AFIA HBT patient app and everyday card usage.",
+    "fr": "Contexte :\nHealthBOOK Tech, entreprise béninoise de santé numérique, déploie un écosystème intégrant gestion hospitalière, application mobile et la carte de santé rechargeable AFIA à puce NFC. Pour sensibiliser le corps médical et les centres de santé, l'entreprise souhaitait une vidéo explicative dynamique d'une minute illustrant concrètement son adoption en milieu hospitalier.\n\nDéfi :\nExpliquer avec simplicité et rigueur un parcours médical complet en 60 secondes : identification du patient, accès sécurisé au dossier médical, règlement à la caisse, délivrance en pharmacie, examens en laboratoire et rechargement mobile, tout en conservant une tonalité chaleureuse et dédramatisée.\n\nApproche créative & technique :\nJ'ai piloté l'ensemble de la chaîne de fabrication sur trois semaines. Après l'élaboration du brief et l'écriture du script, j'ai conçu un découpage technique en 19 plans et un storyboard précis. Pour incarner le dispositif, j'ai créé le personnage de Chantal, une patiente guide au fil des décors hospitaliers dessinés sous Photoshop. L'animation associe l'expressivité de l'animation 2D sous TVPaint et l'efficacité graphique du motion design sur After Effects et Premiere Pro, renforcée par une voix off soignée et un sound design immersif.\n\nRésultat :\nLa vidéo a été pleinement validée et chaleureusement accueillie par HealthBOOK Tech. Cette réussite a permis d'établir une relation de confiance durable : le client m'a immédiatement renouvelé sa confiance en me confiant la réalisation de deux nouvelles vidéos consacrées à l'application patient AFIA HBT et à l'usage quotidien de la carte."
+  },
+  "role": {
+    "en": "End-to-end project direction: creative brief analysis, script writing and revisions, technical breakdown (19 shots), storyboard and layout (TVPaint), character design of Chantal and hospital backgrounds (Photoshop), 2D animation and motion design (TVPaint & After Effects), voiceover direction, music and sound design, client revisions and final delivery in 3 weeks.",
+    "fr": "Conduite du projet de A à Z : analyse du brief et écriture du script, découpage technique (19 plans) et storyboard sous TVPaint, création du personnage de Chantal et des décors sous Photoshop, animation 2D et motion design sous TVPaint et After Effects, voix off, musique et sound design, finalisation et livraison en 3 semaines."
+  },
+  "credits": [
+    {
+      "role": "Commanditaire / Client",
+      "name": "HealthBOOK Tech (Bénin)"
+    },
+    {
+      "role": "Projet",
+      "name": "Carte de santé rechargeable AFIA (NFC)"
+    },
+    {
+      "role": "Réalisation & Animation",
+      "name": "Roddy AGBO"
+    },
+    {
+      "role": "Outils de fabrication",
+      "name": "TVPaint, Photoshop, After Effects, Premiere Pro"
+    },
+    {
+      "role": "Durée & Format",
+      "name": "Vidéo explicative ~1 min (Animation 2D & Motion design)"
+    },
+    {
+      "role": "Résultat & Suites",
+      "name": "Projet validé avec succès — attribution de 2 nouvelles vidéos pour la suite de l'écosystème AFIA"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/carte-afia/cover.jpg",
+      "alt": {
+        "en": "Shot 18: Chantal holding the Carte AFIA in hospital",
+        "fr": "Plan 18 : Chantal présentant la Carte AFIA dans le hall d'accueil"
+      },
+      "width": 1024,
+      "height": 576,
+      "caption": {
+        "en": "Shot 18 — Chantal holding the Carte AFIA (Final film still)",
+        "fr": "Plan 18 — Chantal présentant la Carte AFIA (Plan clé final du film)"
+      },
+      "ratio": "16:9"
+    }
+  ],
+  "videos": [
+    {
+      "platform": "local",
+      "id": "/videos/projects/carte-afia/afia-card.mp4",
+      "title": "Plan 19 (Fin) — Animation Motion Design de la carte"
+    }
+  ],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "Carte AFIA Animated Explainer Video | Roddy AGBO",
+      "fr": "Vidéo explicative Carte AFIA — HealthBOOK Tech | Roddy AGBO"
+    },
+    "description": {
+      "en": "Case study of the Carte AFIA explainer video for HealthBOOK Tech (Benin). 2D animation, motion design, character design, and full direction by Roddy AGBO.",
+      "fr": "Étude de cas de la vidéo explicative Carte AFIA pour HealthBOOK Tech (Bénin). Animation 2D, motion design, character design et réalisation intégrale par Roddy AGBO."
+    }
+  },
+  "keywords": [
+    "Animation 2D",
+    "Motion design",
+    "Vidéo explicative",
+    "Santé numérique",
+    "Storyboard & Découpage technique",
+    "Direction artistique & Character design",
+    "TVPaint & After Effects"
+  ]
+}

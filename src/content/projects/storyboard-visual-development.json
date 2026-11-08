@@ -1,0 +1,62 @@
+{
+  "title": {
+    "en": "Storyboard & Visual Development",
+    "fr": "Storyboard et développement visuel"
+  },
+  "slug": "storyboard-visual-development",
+  "categories": [
+    "Storyboard & Visual Development",
+    "Animation"
+  ],
+  "type": "storyboard",
+  "featured": true,
+  "order": 7,
+  "status": "draft",
+  "summary": {
+    "en": "Pre-production works: sequential storytelling, cinematic camera staging, character model sheets, and environmental layouts.",
+    "fr": "Travaux de préproduction : mise en scène séquentielle, cadrages cinématographiques, fiches de personnages et décors."
+  },
+  "description": {
+    "en": "Demonstration of pre-production methodology: translating narrative scripts into strong visual beats, dynamic camera angles, and clear manufacturing blueprints for 2D animation pipelines. Confidential studio production assets are strictly excluded.",
+    "fr": "Démonstration des compétences de préproduction : traduire un récit en découpage visuel fort, sens du rythme, perspectives et blueprints de fabrication pour les équipes d'animation. Les éléments de production confidentiels sont exclus."
+  },
+  "role": {
+    "en": "Storyboard artist, visual development artist, layout artist.",
+    "fr": "Storyboarder, artiste de développement visuel, layout artist."
+  },
+  "credits": [
+    {
+      "role": "Projets & Séries",
+      "name": "Recherches personnelles et productions non-confidentielles"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/storyboard-visual-development/cover.svg",
+      "alt": {
+        "en": "Visual development sequential board",
+        "fr": "Planche séquentielle de développement visuel"
+      },
+      "width": 1200,
+      "height": 800,
+      "caption": {
+        "en": "Storyboard frames — Ratio 3:2",
+        "fr": "Cases de storyboard — Ratio 3:2"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "Storyboard & Visual Development | Roddy AGBO",
+      "fr": "Storyboard et développement visuel | Roddy AGBO"
+    },
+    "description": {
+      "en": "Cinematic sequential art, storyboard sequences and character design by 2D animator Roddy AGBO.",
+      "fr": "Mise en scène cinématographique, découpage séquentiel et développement visuel par Roddy AGBO."
+    }
+  }
+}

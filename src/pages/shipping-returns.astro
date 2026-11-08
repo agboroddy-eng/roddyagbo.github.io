@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../../site.config.json';
+import { useTranslations } from '../i18n/ui';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout title="Shipping & Returns" description="Shipping information, delivery estimates and return policy." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">{t('legal.shippingTitle')}</h1>
+      <p class="disclaimer-tag">Prices are in West African CFA francs (XOF)</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Print on Demand Fulfillment</h2>
+        <p>All artworks and merchandise available in this shop are personal artistic creations by Roddy AGBO. Items are manufactured on demand to preserve paper grain, ink depth, and archival condition.</p>
+        <p>Production timeline: <strong>à confirmer avant ouverture</strong> upon payment validation.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Shipping Zones & Estimates</h2>
+        <ul>
+          <li><strong>Benin (Local delivery):</strong> à confirmer avant ouverture — Fee: à confirmer avant ouverture</li>
+          <li><strong>West Africa / Regional:</strong> à confirmer avant ouverture — Fee: à confirmer avant ouverture</li>
+          <li><strong>International:</strong> à confirmer avant ouverture — Fee: à confirmer avant ouverture</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Damaged or Faulty Items</h2>
+        <p>If an artwork arrives damaged due to transport, please photograph the package and contents within 48 hours of receipt and reach out directly via the contact page. A replacement will be arranged upon verification.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>4. Cancellations</h2>
+        <p>Because each item is printed individually to order, cancellations must be requested before manufacturing begins.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p, .legal-section ul { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+  .legal-section ul { padding-left: 1.5rem; }
+</style>

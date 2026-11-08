@@ -1,0 +1,303 @@
+---
+import siteConfig from '../../site.config.json';
+import { useTranslations, getLocalizedPath, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  currentPath?: string;
+}
+
+const { lang, currentPath = '/' } = Astro.props;
+const t = useTranslations(lang);
+const shopEnabled = siteConfig.shop.enabled;
+
+const isFr = lang === 'fr';
+
+const navLinks = [
+  { href: isFr ? '/fr' : '/', label: t('nav.work') },
+  ...(shopEnabled ? [{ href: isFr ? '/fr/shop' : '/shop', label: t('nav.shop') }] : []),
+  { href: isFr ? '/fr/services' : '/services', label: t('nav.services') },
+  { href: isFr ? '/fr/about' : '/about', label: t('nav.about') },
+  { href: isFr ? '/fr/contact' : '/contact', label: t('nav.contact') }
+];
+
+const targetLang: Lang = isFr ? 'en' : 'fr';
+const switchLangUrl = getLocalizedPath(currentPath, targetLang);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href={isFr ? '/fr' : '/'} class="brand">
+      <span class="brand-name">{siteConfig.artist.name}</span>
+      <span class="brand-title">{isFr ? siteConfig.artist.title.fr : siteConfig.artist.title.en}</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        {navLinks.map((link) => (
+          <li>
+            <a 
+              href={link.href} 
+              class:list={['nav-link', { 'active': currentPath === link.href || (link.href !== '/' && link.href !== '/fr' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <a 
+        href={switchLangUrl} 
+        class="lang-switch" 
+        aria-label={t('a11y.languageToggle')}
+        title={isFr ? "Switch to English" : "Passer en français"}
+      >
+        <span class:list={['lang-code', { 'current': !isFr }]}>EN</span>
+        <span class="lang-divider">/</span>
+        <span class:list={['lang-code', { 'current': isFr }]}>FR</span>
+      </a>
+    </nav>
+
+    <div class="mobile-actions">
+      <a 
+        href={switchLangUrl} 
+        class="lang-switch-mobile" 
+        aria-label={t('a11y.languageToggle')}
+      >
+        {isFr ? 'EN' : 'FR'}
+      </a>
+      <button 
+        id="menu-toggle" 
+        class="menu-toggle-btn" 
+        aria-expanded="false" 
+        aria-controls="mobile-menu"
+        aria-label={t('a11y.menuToggle')}
+      >
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="mobile-nav-link">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      const newState = !isExpanded;
+      
+      toggleBtn.setAttribute('aria-expanded', String(newState));
+      mobileMenu.setAttribute('aria-hidden', String(!newState));
+      mobileMenu.classList.toggle('is-open', newState);
+      toggleBtn.classList.toggle('is-active', newState);
+      document.body.classList.toggle('menu-locked', newState);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenu.classList.remove('is-open');
+        toggleBtn.classList.remove('is-active');
+        document.body.classList.remove('menu-locked');
+        toggleBtn.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(250, 249, 246, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+    transition: padding var(--transition-fast);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .brand-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+
+  .brand-title {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+
+  .desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: flex;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    transition: color var(--transition-fast);
+    position: relative;
+    padding-bottom: 0.25rem;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-text);
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--color-text);
+  }
+
+  .lang-switch {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .lang-code.current {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .lang-divider {
+    color: var(--color-border-dark);
+  }
+
+  .mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-actions {
+      display: none;
+    }
+  }
+
+  .lang-switch-mobile {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .menu-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+
+  .burger-bar {
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .menu-toggle-btn.is-active .burger-bar:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-toggle-btn.is-active .burger-bar:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 73px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 73px);
+    background-color: var(--color-bg);
+    padding: 2.5rem 1.5rem;
+    z-index: 999;
+  }
+
+  .mobile-menu.is-open {
+    display: block;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .mobile-nav-link {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+</style>

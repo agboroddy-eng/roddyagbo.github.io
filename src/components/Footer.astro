@@ -1,0 +1,207 @@
+---
+import siteConfig from '../../site.config.json';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const isFr = lang === 'fr';
+const currentYear = new Date().getFullYear();
+
+const socialLinks = Object.entries(siteConfig.contact.social).filter(
+  ([_, url]) => url && url !== '[À REMPLIR]'
+);
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="artist-name">{siteConfig.artist.name}</p>
+        <p class="signature">« {siteConfig.artist.signature} »</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <span class="footer-label">{isFr ? 'Navigation' : 'Explore'}</span>
+          <ul class="footer-nav">
+            <li><a href={isFr ? '/fr' : '/'}>{t('nav.work')}</a></li>
+            {siteConfig.shop.enabled && <li><a href={isFr ? '/fr/shop' : '/shop'}>{t('nav.shop')}</a></li>}
+            <li><a href={isFr ? '/fr/services' : '/services'}>{t('nav.services')}</a></li>
+            <li><a href={isFr ? '/fr/about' : '/about'}>{t('nav.about')}</a></li>
+            <li><a href={isFr ? '/fr/contact' : '/contact'}>{t('nav.contact')}</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-label">{isFr ? 'Réseaux & Contact' : 'Connect'}</span>
+          <ul class="footer-nav">
+            {socialLinks.length > 0 ? (
+              socialLinks.map(([platform, url]) => (
+                <li>
+                  <a href={url} target="_blank" rel="noopener noreferrer" class="social-link">
+                    {platform.charAt(0).toUpperCase() + platform.slice(1)}
+                  </a>
+                </li>
+              ))
+            ) : (
+              <li><span class="text-muted">{isFr ? 'Réseaux [À CONFIGURER]' : 'Socials [TO CONFIGURE]'}</span></li>
+            )}
+            <li>
+              <a href={isFr ? '/fr/contact' : '/contact'} class="contact-cta">
+                {t('footer.contactMe')} &rarr;
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {currentYear} {siteConfig.artist.name}. {t('footer.rights')}
+      </p>
+      <div class="legal-links">
+        <a href={isFr ? '/fr/terms' : '/terms'}>{isFr ? 'Conditions' : 'Terms'}</a>
+        <span class="separator">&middot;</span>
+        <a href={isFr ? '/fr/privacy' : '/privacy'}>{isFr ? 'Confidentialité' : 'Privacy'}</a>
+        {siteConfig.shop.enabled && (
+          <>
+            <span class="separator">&middot;</span>
+            <a href={isFr ? '/fr/shipping-returns' : '/shipping-returns'}>{isFr ? 'Livraison & Retours' : 'Shipping'}</a>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .footer-brand {
+    max-width: 380px;
+  }
+
+  .artist-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+
+  .signature {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .footer-links-group {
+    display: flex;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .footer-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+  }
+
+  .footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-text);
+  }
+
+  .contact-cta {
+    font-weight: 600;
+    color: var(--color-text) !important;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.82rem;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .legal-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legal-links a {
+    color: var(--color-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .legal-links a:hover {
+    color: var(--color-text);
+  }
+
+  .separator {
+    color: var(--color-border-dark);
+  }
+</style>

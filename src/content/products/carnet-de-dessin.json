@@ -1,0 +1,72 @@
+{
+  "title": {
+    "en": "Artist Sketchbook",
+    "fr": "Carnet de dessin de l'artiste"
+  },
+  "slug": "carnet-de-dessin",
+  "type": "merch",
+  "categories": [
+    "Goodies"
+  ],
+  "description": {
+    "en": "Hardcover sketchbook featuring an original personal cover illustration. Ideal for drawing, sketching, and notes.",
+    "fr": "Carnet de croquis relié avec couverture rigide illustrée d'une œuvre personnelle originale. Idéal pour le dessin et l'esquisse."
+  },
+  "details": {
+    "dimensions": "A5 (14.8 x 21 cm) - 160 pages",
+    "material": "Papier blanc naturel 140g / m²",
+    "finish": "Reliure cousue, couverture rigide mate",
+    "year": "2024"
+  },
+  "variants": [
+    {
+      "name": {
+        "en": "Standard A5",
+        "fr": "Standard A5"
+      },
+      "priceXof": "[À REMPLIR]",
+      "sku": "BOOK-SKETCH-A5",
+      "fedapayUrl": ""
+    }
+  ],
+  "currency": "XOF",
+  "availability": "coming-soon",
+  "fulfillment": {
+    "method": "print-on-demand",
+    "provider": "[À CHOISIR]",
+    "productionDays": "[À REMPLIR]"
+  },
+  "edition": "open",
+  "stock": "",
+  "images": [
+    {
+      "src": "/images/products/carnet.svg",
+      "alt": {
+        "en": "Hardcover Sketchbook placeholder",
+        "fr": "Visuel du carnet de croquis"
+      },
+      "width": 800,
+      "height": 800,
+      "ratio": "1:1"
+    }
+  ],
+  "relatedSeries": "Univers graphique",
+  "shippingProfile": "standard",
+  "checkout": {
+    "mode": "none",
+    "url": ""
+  },
+  "featured": false,
+  "order": 2,
+  "published": false,
+  "seo": {
+    "title": {
+      "en": "Artist Sketchbook — Roddy AGBO Shop",
+      "fr": "Carnet de dessin — Boutique Roddy AGBO"
+    },
+    "description": {
+      "en": "Hardcover artistic sketchbook featuring original artwork by Roddy AGBO.",
+      "fr": "Carnet de dessin artistique avec couverture originale par Roddy AGBO."
+    }
+  }
+}

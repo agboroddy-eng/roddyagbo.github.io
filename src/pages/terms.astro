@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lang = 'en';
+---
+
+<Layout title="Terms of Sale" description="Terms of sale and intellectual property policy." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">Terms of Sale</h1>
+      <p class="disclaimer-tag">Model template — to be confirmed by a legal professional.</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Scope & Artist Rights</h2>
+        <p>All illustrations, concepts, designs, and animations displayed on this site and sold in the shop are the exclusive intellectual property of <strong>Roddy AGBO</strong>.</p>
+        <p><strong>Crucial Rule:</strong> The purchase of a physical print or item conveys ownership of the physical object only. It confers <strong>no copyright, reproduction right, digital redistribution, or commercial exploitation right</strong> whatsoever. Any unauthorized reproduction, resale, or scanning is strictly prohibited.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Currency & Payment</h2>
+        <p>Prices are indicated in West African CFA francs (XOF). Online payments are handled via secure payment links powered by FedaPay. No banking credentials or credit card numbers are ever stored or processed directly on this website.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Personal Commissions vs Shop Products</h2>
+        <p>Original art commissions (custom character design, dedicated illustrations) are distinct from shop products and follow individual service contracts established upon initial inquiry.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+</style>

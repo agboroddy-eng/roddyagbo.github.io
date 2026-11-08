@@ -1,0 +1,65 @@
+{
+  "title": {
+    "en": "Cybersecurity Explained to Children",
+    "fr": "La cybersécurité expliquée aux enfants"
+  },
+  "slug": "cybersecurite-enfants",
+  "categories": [
+    "Illustration"
+  ],
+  "type": "book",
+  "featured": true,
+  "order": 4,
+  "status": "published",
+  "summary": {
+    "en": "Illustrated educational book teaching young audiences about digital safety, cyber threats, and online best practices.",
+    "fr": "Livre illustré pédagogique expliquant aux enfants les différents types de cybercriminalité et les réflexes pour s'en protéger."
+  },
+  "description": {
+    "en": "Educational illustrated book created for Cyrille AMETEPE and his publishing house Holyca Group. I created 76 interior visuals as well as the cover illustration and graphic design, making passwords, personal data, phishing and online scams accessible to children. The book is available on Amazon.",
+    "fr": "Livre illustré pédagogique réalisé pour Cyrille AMETEPE et sa maison d’édition Holyca Group. J’ai créé 76 visuels intérieurs ainsi que l’illustration et le design graphique de la couverture afin de rendre accessibles aux enfants les enjeux liés aux mots de passe, aux données personnelles, au phishing et aux escroqueries en ligne. L’ouvrage est disponible sur Amazon."
+  },
+  "role": {
+    "en": "Editorial illustrator: creation of 76 interior illustrations, visual language development and complete cover illustration.",
+    "fr": "Illustrateur éditorial : création de 76 illustrations intérieures, direction du langage visuel et illustration complète de la couverture."
+  },
+  "credits": [
+    {
+      "role": "Auteur / Author",
+      "name": "Cyrille AMETEPE"
+    },
+    {
+      "role": "Éditeur / Publisher",
+      "name": "Holyca Group"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/cybersecurite-enfants/cover.jpg",
+      "alt": {
+        "en": "La cybersécurité expliquée aux enfants cover mockup",
+        "fr": "Couverture du livre La cybersécurité expliquée aux enfants"
+      },
+      "width": 1024,
+      "height": 682,
+      "caption": {
+        "en": "Cover art — Holyca Group",
+        "fr": "Illustration de couverture — Holyca Group"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "Cybersecurity Explained to Children | Roddy AGBO",
+      "fr": "La cybersécurité expliquée aux enfants | Roddy AGBO"
+    },
+    "description": {
+      "en": "Educational illustrations for Cybersecurity Explained to Children by Cyrille Ametepe (Holyca Group). Illustrated by Roddy AGBO.",
+      "fr": "Illustrations pour le livre La cybersécurité expliquée aux enfants de Cyrille Ametepe (Holyca Group), illustré par Roddy AGBO."
+    }
+  }
+}

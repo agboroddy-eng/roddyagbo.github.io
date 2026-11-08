@@ -1,0 +1,60 @@
+{
+  "artist": {
+    "name": "Roddy AGBO",
+    "title": {
+      "en": "Illustrator, 2D Animator & Visual Art Director",
+      "fr": "Illustrateur, animateur 2D & directeur artistique visuel"
+    },
+    "location": {
+      "en": "Benin, West Africa",
+      "fr": "Bénin, Afrique de l'Ouest"
+    },
+    "tagline": {
+      "en": "I create characters, images and visual worlds for books, animated films and cultural projects.",
+      "fr": "Je crée des personnages, des images et des univers visuels pour les livres, les films d’animation et les projets culturels."
+    },
+    "signature": "Bring your dreams to life."
+  },
+  "contact": {
+    "email": "agboroddy@gmail.com",
+    "whatsapp": "+33 7 59 47 21 22",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/roddy-agbo-659457125",
+      "instagram": "https://www.instagram.com/roddyagbo?psln=MWg5bTFta2luNjI2YQ%3D%3D&utm_source=qr",
+      "artstation": "[À REMPLIR]",
+      "behance": "[À REMPLIR]",
+      "facebook": "https://www.facebook.com/share/1Eo5QStWvm/?mibextid=wwXIfr"
+    }
+  },
+  "shop": {
+    "enabled": true,
+    "currency": "XOF",
+    "currencySymbol": "FCFA",
+    "currencyNotice": {
+      "en": "Prices are in West African CFA francs (XOF)",
+      "fr": "Les prix sont indiqués en francs CFA (XOF)"
+    },
+    "fulfillment": {
+      "provider": "[À CHOISIR]",
+      "productionTimeDays": "[À REMPLIR]",
+      "shippingZones": {
+        "local": {
+          "label": "Bénin",
+          "estimatedDays": "[À REMPLIR]",
+          "fee": "[À REMPLIR]"
+        },
+        "regional": {
+          "label": "Afrique de l'Ouest / Sous-région",
+          "estimatedDays": "[À REMPLIR]",
+          "fee": "[À REMPLIR]"
+        },
+        "international": {
+          "label": "International",
+          "estimatedDays": "[À REMPLIR]",
+          "fee": "[À REMPLIR]"
+        }
+      }
+    }
+  },
+  "siteUrl": "https://roddyagbo.com"
+}

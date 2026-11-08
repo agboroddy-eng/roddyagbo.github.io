@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const lang = 'fr';
+---
+
+<Layout title="Politique de Confidentialité" description="Politique de confidentialité concernant les formulaires et commandes." lang={lang}>
+  <div class="container legal-page">
+    <header class="legal-header">
+      <h1 class="page-title">Politique de Confidentialité</h1>
+      <p class="disclaimer-tag">Modèle indicatif — à faire valider par un professionnel du droit.</p>
+    </header>
+
+    <div class="legal-prose">
+      <section class="legal-section">
+        <h2>1. Données collectées</h2>
+        <p>Les informations personnelles (nom, e-mail, téléphone, adresse postale) saisies dans les formulaires de contact ou de suivi de commande ne sont collectées que pour répondre à vos demandes et assurer l'acheminement des tirages commandés.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. Non-cession et confidentialité</h2>
+        <p>Vos coordonnées sont strictement confidentielles. Elles ne sont jamais revendues, louées ou cédées à des tiers publicitaires.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. Vos droits</h2>
+        <p>Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données en envoyant un message à Roddy AGBO via la page Contact.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page { padding-top: 4rem; padding-bottom: 6rem; max-width: 800px; }
+  .legal-header { margin-bottom: 3.5rem; }
+  .page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .disclaimer-tag { font-size: 0.88rem; color: var(--color-muted); font-style: italic; }
+  .legal-prose { display: flex; flex-direction: column; gap: 2rem; }
+  .legal-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4rem; }
+  .legal-section p { font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+</style>

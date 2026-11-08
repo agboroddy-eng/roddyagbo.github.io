@@ -1,0 +1,247 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import ShopSection from '../../components/ShopSection.astro';
+import siteConfig from '../../../site.config.json';
+import { useTranslations } from '../../i18n/ui';
+import { getCollection } from 'astro:content';
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const allProjects = await getCollection('projects', ({ data }: any) => {
+  return data.status === 'published';
+});
+
+const sortedProjects = allProjects.sort((a: any, b: any) => a.data.order - b.data.order);
+
+const allProducts = await getCollection('products', ({ data }: any) => {
+  return data.published;
+});
+
+const filterCategories = [
+  { key: 'all', label: t('filters.all') },
+  { key: 'Illustration', label: t('filters.illustration') },
+  { key: 'Animation 2D', label: t('filters.animation') },
+  { key: 'Storyboard & Visual Development', label: t('filters.storyboard') },
+  { key: 'Direction artistique', label: t('filters.artDirection') }
+];
+---
+
+<Layout lang={lang}>
+  <section class="hero-section">
+    <div class="container hero-container">
+      <h1 class="hero-title">{siteConfig.artist.tagline.fr}</h1>
+      <p class="hero-subtext">
+        {t('hero.intro')}
+      </p>
+      <p class="hero-availability">{t('hero.availability')}</p>
+      <div class="hero-actions">
+        <a href={lang === 'fr' ? '/fr/services' : '/services'} class="hero-cta hero-cta-primary">{t('hero.ctaProjects')} &rarr;</a>
+        <a href={lang === 'fr' ? '/fr/contact' : '/contact'} class="hero-cta hero-cta-secondary">{t('hero.ctaContact')}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" aria-label="Sélection de projets">
+    <div class="container">
+      <div class="filters-bar" role="toolbar" aria-label="Filtrer les projets par discipline">
+        {filterCategories.map((cat, idx) => (
+          <button 
+            type="button"
+            class:list={['filter-btn', { 'is-active': idx === 0 }]}
+            data-filter={cat.key}
+            aria-pressed={idx === 0 ? "true" : "false"}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <div id="projects-grid" class="projects-grid">
+        {sortedProjects.map((project: any, idx: number) => (
+          <ProjectCard project={project.data} lang={lang} index={idx} />
+        ))}
+      </div>
+
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <p>{t('gallery.empty')}</p>
+      </div>
+    </div>
+  </section>
+
+  {siteConfig.shop.enabled && (
+    <ShopSection products={allProducts} lang={lang} />
+  )}
+</Layout>
+
+<script>
+  function setupFilters() {
+    const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+    const projectCards = document.querySelectorAll<HTMLElement>('.project-card');
+    const emptyState = document.getElementById('empty-state');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        if (!filter) return;
+
+        filterBtns.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        let visibleCount = 0;
+
+        projectCards.forEach((card) => {
+          const rawCategories = card.getAttribute('data-categories') || '[]';
+          let categories: string[] = [];
+          try {
+            categories = JSON.parse(rawCategories);
+          } catch (e) {
+            categories = [];
+          }
+
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      });
+    });
+  }
+
+  setupFilters();
+  document.addEventListener('astro:after-swap', setupFilters);
+</script>
+
+<style>
+  .hero-section {
+    padding-top: 4.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      padding-top: 6rem;
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  .hero-container {
+    max-width: 860px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 3.25rem;
+    }
+  }
+
+  .hero-availability {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .hero-cta-primary { background: var(--color-text); color: var(--color-bg); }
+  .hero-cta-secondary { border: 1px solid var(--color-border-dark); color: var(--color-text); }
+  .hero-subtext {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+
+  .gallery-section {
+    padding-bottom: 5rem;
+  }
+
+  .filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+
+  .filter-btn {
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-muted);
+    background: transparent;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover {
+    color: var(--color-text);
+    background-color: var(--color-border);
+  }
+
+  .filter-btn.is-active {
+    color: var(--color-text);
+    background-color: var(--color-border);
+    font-weight: 600;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 2.5rem;
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
+</style>
