@@ -1,4 +1,5 @@
 ---
+import { assetUrl } from '../../utils/assets';
 import Layout from '../../layouts/Layout.astro';
 import siteConfig from '../../../site.config.json';
 import { useTranslations } from '../../i18n/ui';
@@ -22,10 +23,15 @@ const t = useTranslations(lang);
       <div class="portrait-col">
         <div class="portrait-frame">
           <picture>
-            <source srcset="/images/roddy-agbo.webp" type="image/webp" />
-            <img 
-              src="/images/roddy-agbo.jpg" 
-              alt="Portrait de Roddy AGBO" 
+            <source
+  srcset={assetUrl('/images/roddy-agbo.webp')}
+  type="image/webp"
+/>
+
+<img
+  src={assetUrl('/images/roddy-agbo.jpg')}
+  alt="Portrait de Roddy AGBO"
+/> 
               width="800" 
               height="1087" 
               loading="eager" 

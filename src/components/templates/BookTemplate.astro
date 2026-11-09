@@ -1,4 +1,5 @@
 ---
+import { assetUrl } from '../../utils/assets';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/ui';
 
@@ -33,7 +34,7 @@ const shopUrl = isFr ? '/fr/shop' : '/shop';
       {primaryImage && (
         <div class="cover-box" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
           <img 
-            src={primaryImage.src} 
+            src={assetUrl(primaryImage.src)} 
             alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
             width={primaryImage.width} 
             height={primaryImage.height} 
@@ -82,7 +83,7 @@ const shopUrl = isFr ? '/fr/shop' : '/shop';
           <figure class="gallery-item">
             <div class="img-frame" style={`aspect-ratio: ${img.width} / ${img.height};`}>
               <img 
-                src={img.src} 
+                src={assetUrl(img.src)} 
                 alt={isFr ? img.alt.fr : img.alt.en} 
                 width={img.width} 
                 height={img.height} 

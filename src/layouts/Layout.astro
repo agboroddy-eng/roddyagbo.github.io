@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import siteConfig from '../../site.config.json';
 import { useTranslations, type Lang } from '../i18n/ui';
+import { assetUrl } from '../utils/assets';
 
 interface Props {
   title?: string;
@@ -26,8 +27,10 @@ const pathname = Astro.url.pathname;
 const canonicalUrl = new URL(pathname, siteConfig.siteUrl).href;
 const enUrl = new URL(pathname.replace(/^\/fr/, '') || '/', siteConfig.siteUrl).href;
 const frUrl = new URL(`/fr${pathname.replace(/^\/fr/, '')}`.replace(/\/fr\/$/, '/fr'), siteConfig.siteUrl).href;
-const socialImage = ogImage ? new URL(ogImage, siteConfig.siteUrl).href : `${siteConfig.siteUrl}/images/roddy-agbo.jpg`;
 const publicBase = import.meta.env.BASE_URL;
+const socialImage = ogImage
+  ? new URL(ogImage, siteConfig.siteUrl).href
+  : `${siteConfig.siteUrl}${assetUrl('/images/roddy-agbo.jpg')}`;
 ---
 
 <!doctype html>
@@ -35,7 +38,11 @@ const publicBase = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+  rel="icon"
+  type="image/svg+xml"
+  href={assetUrl('/favicon.svg')}
+/>
     <meta name="generator" content={Astro.generator} />
 
     <title>{pageTitle}</title>

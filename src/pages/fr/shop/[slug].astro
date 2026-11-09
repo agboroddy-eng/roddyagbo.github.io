@@ -1,4 +1,5 @@
 ---
+import { assetUrl } from '../../../utils/assets';
 import Layout from '../../../layouts/Layout.astro';
 import siteConfig from '../../../../site.config.json';
 import { useTranslations } from '../../../i18n/ui';
@@ -17,7 +18,7 @@ const lang = 'fr';
 const t = useTranslations(lang);
 
 const primaryImage = product.images[0] || {
-  src: '/images/products/placeholder.svg',
+  src: assetUrl('/images/products/placeholder.svg'),
   alt: { en: 'Product visual', fr: 'Visuel produit' },
   width: 800,
   height: 800
@@ -39,7 +40,7 @@ const artistWhatsapp = siteConfig.contact.whatsapp !== '[À REMPLIR]' ? siteConf
       <div class="product-gallery">
         <div class="main-image-frame" style={`aspect-ratio: ${primaryImage.width} / ${primaryImage.height};`}>
           <img 
-            src={primaryImage.src} 
+            src={assetUrl(primaryImage.src)} 
             alt={primaryImage.alt.fr} 
             width={primaryImage.width} 
             height={primaryImage.height} 

@@ -2,6 +2,7 @@
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/ui';
 import VideoFacade from '../VideoFacade.astro';
+import { assetUrl } from '../../utils/assets';
 
 interface Props {
   project: any;
@@ -54,7 +55,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
             muted 
             loop 
             playsinline 
-            poster={primaryImage ? primaryImage.src : undefined}
+            poster={primaryImage ? assetUrl(primaryImage.src) : undefined}
             class="local-video-player"
           >
             <source src={primaryVideo.id} type="video/mp4" />
@@ -65,7 +66,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
         <VideoFacade 
           platform={primaryVideo.platform} 
           id={primaryVideo.id} 
-          coverImage={primaryImage ? primaryImage.src : undefined} 
+          coverImage={primaryImage ? assetUrl(primaryImage.src) : undefined} 
           title={isFr ? project.title.fr : project.title.en} 
         />
       )
@@ -187,9 +188,9 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
           <div class="kitsu-card">
             <div class="kitsu-card-img-wrap">
               <picture>
-                <source srcset={item.image.replace('.png', '.webp')} type="image/webp" />
+                <source srcset={assetUrl(item.image.replace('.png', '.webp'))} type="image/webp" />
                 <img 
-                  src={item.image} 
+                  src={assetUrl(item.image)} 
                   alt={isFr ? item.title.fr : item.title.en} 
                   loading="lazy" 
                   width="1280" 
@@ -221,9 +222,9 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
       <figure class="storyboard-figure">
         <div class="storyboard-img-container">
           <picture>
-            <source srcset={storyboardSec.image.replace('.jpg', '.webp')} type="image/webp" />
+            <source srcset={assetUrl(storyboardSec.image.replace('.jpg', '.webp'))} type="image/webp" />
             <img 
-              src={storyboardSec.image} 
+              src={assetUrl(storyboardSec.image)} 
               alt={isFr ? storyboardSec.title.fr : storyboardSec.title.en} 
               loading="lazy" 
               width="1920" 
@@ -257,7 +258,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
               <picture>
                 <source srcset={item.image.replace('.jpg', '.webp')} type="image/webp" />
                 <img 
-                  src={item.image} 
+                  src={assetUrl(item.image)} 
                   alt={isFr ? item.title.fr : item.title.en} 
                   loading="lazy" 
                   width="1215" 
@@ -312,9 +313,9 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
         {dreamTeam.image && (
           <div class="dream-team-photo-wrap">
             <picture>
-              <source srcset={dreamTeam.image.replace('.jpg', '.webp')} type="image/webp" />
+              <source srcset={assetUrl(dreamTeam.image.replace('.jpg', '.webp'))} type="image/webp" />
               <img 
-                src={dreamTeam.image} 
+                src={assetUrl(dreamTeam.image)} 
                 alt="Dream Team — L'Art ou la Rue" 
                 loading="lazy" 
                 width="1920" 
@@ -350,7 +351,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
           <figure class="visual-figure">
             <div class="visual-img-container" style={`aspect-ratio: ${img.width} / ${img.height};`}>
               <img 
-                src={img.src} 
+                src={assetUrl(img.src)} 
                 alt={isFr ? img.alt.fr : img.alt.en} 
                 width={img.width} 
                 height={img.height} 
