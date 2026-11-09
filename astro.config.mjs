@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://roddyagbo.com',
+  site: 'https://agboroddy-eng.github.io/roddyagbo.github.io',
+  base: '/roddyagbo.github.io',
   compressHTML: true,
   build: {
     format: 'directory'
