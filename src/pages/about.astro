@@ -1,11 +1,17 @@
 ---
-import { assetUrl } from '../utils/assets';
 import Layout from '../layouts/Layout.astro';
 import siteConfig from '../../site.config.json';
 import { useTranslations } from '../i18n/ui';
 
 const lang = 'en';
 const t = useTranslations(lang);
+
+const assetUrl = (path: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const normalizedBase = base === '/' ? '' : base.replace(/\/$/, '');
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  return `${normalizedBase}${normalizedPath}`;
+};
 ---
 
 <Layout 
@@ -24,19 +30,17 @@ const t = useTranslations(lang);
         <div class="portrait-frame">
           <picture>
             <source
-  srcset={assetUrl('/images/roddy-agbo.webp')}
-  type="image/webp"
-/>
-
-<img
-  src={assetUrl('/images/roddy-agbo.jpg')}
-  alt="Portrait de Roddy AGBO"
-/> 
-              width="800" 
-              height="1087" 
-              loading="eager" 
-              decoding="async" 
-              class="portrait-img" 
+              srcset={assetUrl('/images/roddy-agbo.webp')}
+              type="image/webp"
+            />
+            <img
+              src={assetUrl('/images/roddy-agbo.jpg')}
+              alt="Roddy AGBO portrait"
+              width="800"
+              height="1087"
+              loading="eager"
+              decoding="async"
+              class="portrait-img"
             />
           </picture>
         </div>
