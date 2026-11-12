@@ -1,0 +1,65 @@
+{
+  "title": {
+    "en": "CAPSULE ITS — Storyboard",
+    "fr": "CAPSULE ITS — Storyboard"
+  },
+  "slug": "capsule-its",
+  "categories": [
+    "Storyboard & Visual Development"
+  ],
+  "type": "storyboard",
+  "featured": true,
+  "order": 6,
+  "status": "published",
+  "summary": {
+    "en": "Educational finance capsule developed with Studio Kamitag in Burkina Faso.",
+    "fr": "Capsule éducative sur la finance réalisée avec le studio Kamitag au Burkina Faso."
+  },
+  "description": {
+    "en": "Educational capsule for ITS in collaboration with Studio Kamitag (Burkina Faso). Objective (Result 1): equip communities with knowledge of basic finance and economics. Target audience: out-of-school youth. Topic: the importance of money.",
+    "fr": "Capsule éducative pour ITS en collaboration avec le studio Kamitag (Burkina Faso). Objectif (Résultat 1) : doter les populations des connaissances sur les concepts de la finance de base et de l’économie. Cible : jeunes hors de l’école. Thématique : l’importance de l’argent."
+  },
+  "role": {
+    "en": "Storyboard and visual development for an educational animation capsule.",
+    "fr": "Storyboard et développement visuel pour une capsule d’animation éducative."
+  },
+  "credits": [
+    {
+      "role": "Partner studio",
+      "name": "Kamitag (Burkina Faso)"
+    },
+    {
+      "role": "Project",
+      "name": "ITS — Result 1"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/capsule-its/storyboard.jpg",
+      "alt": {
+        "en": "CAPSULE ITS educational storyboard",
+        "fr": "Storyboard éducatif CAPSULE ITS"
+      },
+      "width": 2528,
+      "height": 1696,
+      "caption": {
+        "en": "Storyboard board — The importance of money",
+        "fr": "Planche storyboard — L’importance de l’argent"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "CAPSULE ITS — Storyboard | Roddy AGBO",
+      "fr": "CAPSULE ITS — Storyboard | Roddy AGBO"
+    },
+    "description": {
+      "en": "Educational storyboard for ITS developed with Studio Kamitag.",
+      "fr": "Storyboard éducatif pour ITS réalisé avec le studio Kamitag."
+    }
+  }
+}

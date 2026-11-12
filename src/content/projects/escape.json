@@ -8,24 +8,72 @@
     "Animation 2D"
   ],
   "type": "film",
-  "featured": false,
-  "order": 3,
-  "status": "draft",
+  "featured": true,
+  "order": 2,
+  "status": "published",
   "summary": {
-    "en": "A 1 minute 30 second 2D animated short film.",
-    "fr": "Un court métrage d’animation 2D d’une durée d’1 minute 30."
+    "en": "A personal 2D animated short film (1 min 27 s), produced in 2022 before Incub’IMA Animation.",
+    "fr": "Un court métrage d’animation 2D personnel de 1 min 27 s, réalisé en 2022 avant Incub’IMA Animation."
   },
   "description": {
-    "en": "ESCAPE is a personal 2D animated short film. The project page is prepared and will be published when the approved key visual, teaser or production stills are added.",
-    "fr": "ESCAPE est un court métrage d’animation 2D personnel. La fiche est préparée et sera publiée dès que le visuel clé, le teaser ou les images de production seront ajoutés."
+    "en": "ESCAPE is a personal 2D animated short film produced in 2022, before Incub’IMA Animation. Official selection at First-Time Filmmaker Sessions, Volume 13 (2025).",
+    "fr": "ESCAPE est un court métrage d’animation 2D personnel réalisé en 2022, avant Incub’IMA Animation. Sélection officielle aux First-Time Filmmaker Sessions, Volume 13 (2025)."
   },
   "role": {
-    "en": "2D animation, visual storytelling and film production.",
-    "fr": "Animation 2D, narration visuelle et fabrication du film."
+    "en": "Personal production: writing, visual development, 2D animation and final film production.",
+    "fr": "Production personnelle : écriture, développement visuel, animation 2D et réalisation finale."
   },
-  "credits": [],
-  "images": [],
-  "videos": [],
+  "credits": [
+    {
+      "role": "Production",
+      "name": "Roddy AGBO"
+    },
+    {
+      "role": "Duration",
+      "name": "1 min 27 s"
+    },
+    {
+      "role": "Selection",
+      "name": "First-Time Filmmaker Sessions — Volume 13 (2025)"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/escape/cover.jpg",
+      "alt": {
+        "en": "ESCAPE animated short film cover",
+        "fr": "Affiche du court métrage d’animation ESCAPE"
+      },
+      "width": 2730,
+      "height": 1536,
+      "caption": {
+        "en": "ESCAPE — official key visual",
+        "fr": "ESCAPE — visuel clé officiel"
+      },
+      "ratio": "16:9"
+    },
+    {
+      "src": "/images/projects/escape/laurier-write.png",
+      "alt": {
+        "en": "ESCAPE production still",
+        "fr": "Image de production d’ESCAPE"
+      },
+      "width": 1280,
+      "height": 850,
+      "caption": {
+        "en": "ESCAPE — production still",
+        "fr": "ESCAPE — image de production"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [
+    {
+      "platform": "local",
+      "id": "/assets/videos/escape.mp4",
+      "title": "ESCAPE — Full film (to be added)"
+    }
+  ],
   "links": [],
   "relatedProducts": [],
   "seo": {
@@ -34,8 +82,8 @@
       "fr": "ESCAPE — Court métrage d’animation 2D | Roddy AGBO"
     },
     "description": {
-      "en": "ESCAPE, a 1 minute 30 second 2D animated short film by Roddy AGBO.",
-      "fr": "ESCAPE, un court métrage d’animation 2D d’1 minute 30 par Roddy AGBO."
+      "en": "ESCAPE, a 1 min 27 s personal 2D animated short film produced in 2022 by Roddy AGBO.",
+      "fr": "ESCAPE, un court métrage d’animation 2D personnel de 1 min 27 s réalisé en 2022 par Roddy AGBO."
     }
   }
 }

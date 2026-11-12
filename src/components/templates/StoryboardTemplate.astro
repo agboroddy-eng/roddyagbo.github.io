@@ -75,6 +75,19 @@ const additionalImages = project.images && project.images.length > 1 ? project.i
     </aside>
   </div>
 
+  {project.links && project.links.length > 0 && (
+    <section class="project-links-section" aria-label={isFr ? 'Documents et liens' : 'Documents and links'}>
+      <h2 class="section-heading">{isFr ? 'Documents & Liens' : 'Documents & Links'}</h2>
+      <div class="project-links-list">
+        {project.links.map((link: any) => (
+          <a href={assetUrl(link.url)} class="project-document-link" target={link.url.endsWith('.pdf') ? '_blank' : undefined} rel={link.url.endsWith('.pdf') ? 'noopener' : undefined}>
+            {isFr ? link.label.fr : link.label.en} →
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
   {additionalImages.length > 0 && (
     <section class="sequences-section">
       <h2 class="section-heading">{t('project.visualsTitle')}</h2>
@@ -287,4 +300,9 @@ const additionalImages = project.images && project.images.length > 1 ? project.i
     font-size: 0.9rem;
     color: var(--color-text);
   }
+
+  .project-links-section { margin: 2rem 0; padding: 1.25rem 1.5rem; background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+  .project-links-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .project-document-link { display: inline-block; padding: 0.7rem 1rem; border: 1px solid var(--color-text); border-radius: var(--radius-sm); font-weight: 600; }
+
 </style>

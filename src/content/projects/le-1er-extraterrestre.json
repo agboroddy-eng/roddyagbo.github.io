@@ -1,0 +1,61 @@
+{
+  "title": {
+    "en": "The First Extraterrestrial",
+    "fr": "Le 1er Extraterrestre"
+  },
+  "slug": "le-1er-extraterrestre",
+  "categories": [
+    "Illustration"
+  ],
+  "type": "book",
+  "featured": true,
+  "order": 3,
+  "status": "published",
+  "summary": {
+    "en": "Children’s book cover illustration created for Armand Dan Éditions.",
+    "fr": "Illustration de couverture réalisée pour un livre jeunesse des éditions Armand Dan."
+  },
+  "description": {
+    "en": "Cover illustration for The First Extraterrestrial, developed with expressive characters and a warm visual language for young readers.",
+    "fr": "Illustration de couverture du 1er Extraterrestre, conçue avec des personnages expressifs et un univers chaleureux pour le jeune public."
+  },
+  "role": {
+    "en": "Illustration and cover design: character staging, visual composition and final artwork.",
+    "fr": "Illustration et conception de couverture : mise en scène des personnages, composition visuelle et réalisation finale."
+  },
+  "credits": [
+    {
+      "role": "Publisher",
+      "name": "Armand Dan Éditions"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/le-1er-extraterrestre/cover.jpg",
+      "alt": {
+        "en": "The First Extraterrestrial book cover",
+        "fr": "Couverture du livre Le 1er Extraterrestre"
+      },
+      "width": 3000,
+      "height": 2000,
+      "caption": {
+        "en": "Book cover — Armand Dan Éditions",
+        "fr": "Couverture du livre — Armand Dan Éditions"
+      },
+      "ratio": "3:2"
+    }
+  ],
+  "videos": [],
+  "links": [],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "The First Extraterrestrial — Children’s Book Illustration | Roddy AGBO",
+      "fr": "Le 1er Extraterrestre — Illustration jeunesse | Roddy AGBO"
+    },
+    "description": {
+      "en": "Children’s book cover illustration by Roddy AGBO.",
+      "fr": "Illustration de couverture jeunesse par Roddy AGBO."
+    }
+  }
+}

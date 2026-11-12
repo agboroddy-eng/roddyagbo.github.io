@@ -12,7 +12,7 @@
       "intro": "2D animator and visual artist based in Benin, specializing in comic book illustration and 2D animated film direction.",
       "ctaProjects": "View my work",
       "ctaContact": "Discuss a project",
-      "availability": "Based in Benin · Available for local assignments and remote collaborations"
+      "availability": "Trained by GOBELINS Paris experts · Available for local assignments and remote collaborations"
     },
     "filters": {
       "all": "All",
@@ -51,7 +51,7 @@
       "title": "About Roddy AGBO",
       "subtitle": "Illustrator, 2D animator, visual storyteller.",
       "bio1": "Based in Cotonou, Benin, Roddy AGBO is an illustrator, author, and 2D animation director. A self-taught visual storyteller driven by narrative depth, his career took root in children’s publishing through impactful books such as Dona and Tom and Cybersecurity Explained to Children. In 2023, he contributed to the Educational Resources initiative and co-authored the Beninese Adventures collection.",
-      "bio2": "Eager to bring his worlds into motion, he joined the prestigious Incub’IMA Animation program in 2025 at Sèmè City, in partnership with Gobelins Paris. Within this high-level collective, he co-directed a landmark animated short film alongside five fellow filmmakers. Serving as production manager and 2D animator, he oversaw the production pipeline end-to-end and mastered animation film manufacturing from the inside.",
+      "bio2": "Driven to bring his worlds to life, he joined the prestigious Incub’IMA Animation program in January 2025 at Sèmè City, in partnership with Gobelins Paris. Within this high-level collective, he co-directed a landmark animated short film alongside five fellow filmmakers. Serving as production manager and 2D animator, he oversaw the production pipeline end-to-end and mastered animation film manufacturing from the inside.",
       "bio3": "Whether crafting illustrated books or orchestrating animated film pipelines, Roddy pursues a meaningful vision: telling authentic, contemporary African stories with global resonance, while actively contributing to building a sustainable animation industry across the African continent.",
       "skillsTitle": "Key Disciplines",
       "skill1": "2D Animation & Rough Animation",
@@ -59,7 +59,7 @@
       "skill3": "Character Design & Visual Development",
       "skill4": "Children's Book & Editorial Illustration",
       "locationLabel": "Location",
-      "locationValue": "Benin, West Africa (available for remote collaborations worldwide)",
+      "locationValue": "Cotonou, Benin (available for local and international remote collaborations)",
       "contactPrompt": "Want to discuss a production or book project?",
       "softwareTitle": "Software & tools"
     },
@@ -172,10 +172,10 @@
     },
     "hero": {
       "tagline": "Illustrateur et animateur 2D façonnant personnages, histoires et univers visuels.",
-      "intro": "Animateur 2D et artiste visuel basé au Bénin, spécialisé dans l'illustration de bande dessinée et la réalisation de film d'animation 2D.",
+      "intro": "Animateur 2D et artiste visuel basé au Bénin, spécialisé dans l’illustration de bande dessinée et la réalisation de films d’animation 2D.",
       "ctaProjects": "Voir mes projets",
       "ctaContact": "Parlons de votre projet",
-      "availability": "Basé au Bénin · Disponible pour missions locales et collaborations remote"
+      "availability": "Formé par des experts de GOBELINS Paris · Disponible pour missions locales et collaborations remote."
     },
     "filters": {
       "all": "Tous",
@@ -214,7 +214,7 @@
       "title": "À propos de Roddy AGBO",
       "subtitle": "Illustrateur, animateur 2D, créateur d'univers visuels.",
       "bio1": "Basé à Cotonou, au Bénin, Roddy AGBO est illustrateur, auteur et réalisateur d’animation 2D. Artiste autodidacte passionné par la puissance narrative de l’image, son parcours s’est d’abord affirmé dans l’édition jeunesse avec des ouvrages remarqués comme Dona et Tom et La cybersécurité expliquée aux enfants. En 2023, il participe au projet Ressources Éducatives et devient co-auteur de la collection Aventures béninoises.",
-      "bio2": "Poussé par la volonté de donner vie et mouvement à ses univers, il intègre en 2025 le programme d’excellence Incub’IMA Animation à Sèmè City, en partenariat avec les Gobelins Paris. Au sein de ce cadre de haut niveau, il co-réalise avec cinq autres créateurs un court métrage d’animation marquant. En cumulant les responsabilités de chargé de production et d’artiste animateur, il maîtrise la gestion du pipeline et appréhende l’industrie du cinéma d’animation de l’intérieur.",
+      "bio2": "Poussé par la volonté de donner vie à ses univers, il intègre en janvier 2025 le programme d’excellence Incub’IMA Animation à Sèmè City, en partenariat avec les Gobelins Paris. Au sein de ce cadre de haut niveau, il co-réalise avec cinq autres créateurs un court métrage d’animation marquant. En cumulant les responsabilités de chargé de production et d’artiste animateur, il maîtrise la gestion du pipeline et appréhende l’industrie du cinéma d’animation de l’intérieur.",
       "bio3": "Qu’il s’agisse d’illustrer un livre ou d’orchestrer une production animée, Roddy poursuit une vision engagée : raconter des récits africains contemporains, émouvants et universels, tout en contribuant activement à l’émergence d’une industrie pérenne du cinéma d’animation en Afrique.",
       "skillsTitle": "Disciplines & Compétences",
       "skill1": "Animation 2D & Rough animation",
@@ -222,7 +222,7 @@
       "skill3": "Character design & Développement visuel",
       "skill4": "Illustration jeunesse & Bande dessinée",
       "locationLabel": "Localisation",
-      "locationValue": "Bénin, Afrique de l'Ouest (disponible pour collaborations locales et internationales à distance)",
+      "locationValue": "Cotonou, Bénin (disponible pour collaborations locales et internationales à distance)",
       "contactPrompt": "Une production en préparation ou un livre à illustrer ?",
       "softwareTitle": "Logiciels & outils"
     },

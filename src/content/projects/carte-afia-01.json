@@ -1,0 +1,73 @@
+{
+  "title": {
+    "en": "CARTE_AFIA_01 — Storyboard",
+    "fr": "CARTE_AFIA_01 — Storyboard"
+  },
+  "slug": "carte-afia-01",
+  "categories": [
+    "Storyboard & Visual Development"
+  ],
+  "type": "storyboard",
+  "featured": true,
+  "order": 5,
+  "status": "published",
+  "summary": {
+    "en": "Storyboard PDF for the Carte AFIA explainer animation.",
+    "fr": "Storyboard PDF de la vidéo explicative Carte AFIA."
+  },
+  "description": {
+    "en": "Storyboard and visual planning for the Carte AFIA explainer animation. The complete seven-page PDF is available below.",
+    "fr": "Storyboard et préparation visuelle de la vidéo explicative Carte AFIA. Le PDF complet de sept pages est disponible ci-dessous."
+  },
+  "role": {
+    "en": "Storyboard, shot planning and visual development.",
+    "fr": "Storyboard, découpage des plans et développement visuel."
+  },
+  "credits": [
+    {
+      "role": "Client",
+      "name": "HealthBOOK Tech (Benin)"
+    },
+    {
+      "role": "Storyboard",
+      "name": "Roddy AGBO"
+    }
+  ],
+  "images": [
+    {
+      "src": "/images/projects/carte-afia-01/storyboard-cover.jpg",
+      "alt": {
+        "en": "First page of the Carte AFIA storyboard",
+        "fr": "Première page du storyboard Carte AFIA"
+      },
+      "width": 1600,
+      "height": 1131,
+      "caption": {
+        "en": "Storyboard preview — complete PDF below",
+        "fr": "Aperçu — PDF complet ci-dessous"
+      },
+      "ratio": "16:9"
+    }
+  ],
+  "videos": [],
+  "links": [
+    {
+      "label": {
+        "en": "Download the complete storyboard PDF",
+        "fr": "Télécharger le storyboard PDF complet"
+      },
+      "url": "/assets/storyboards/Storyboard_CARTE_AFIA_17_09_26.pdf"
+    }
+  ],
+  "relatedProducts": [],
+  "seo": {
+    "title": {
+      "en": "CARTE_AFIA_01 — Storyboard | Roddy AGBO",
+      "fr": "CARTE_AFIA_01 — Storyboard | Roddy AGBO"
+    },
+    "description": {
+      "en": "Storyboard and visual development PDF for Carte AFIA.",
+      "fr": "Storyboard et développement visuel de Carte AFIA."
+    }
+  }
+}

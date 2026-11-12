@@ -58,7 +58,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
             poster={primaryImage ? assetUrl(primaryImage.src) : undefined}
             class="local-video-player"
           >
-            <source src={primaryVideo.id} type="video/mp4" />
+            <source src={assetUrl(primaryVideo.id)} type="video/mp4" />
             {isFr ? "Votre navigateur ne supporte pas la lecture vidéo." : "Your browser does not support HTML5 video."}
           </video>
         </div>
@@ -74,7 +74,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
       <div class="showreel-teaser-wrapper">
         <div class="showreel-hero-img-container">
           <img 
-            src={primaryImage.src} 
+            src={assetUrl(primaryImage.src)} 
             alt={isFr ? primaryImage.alt.fr : primaryImage.alt.en} 
             width={primaryImage.width} 
             height={primaryImage.height} 
@@ -101,6 +101,14 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
     ) : null}
   </div>
 
+  {project.demoReelPath && (
+    <aside class="video-slot-note">
+      <strong>{isFr ? 'Emplacement Demo Reel' : 'Demo Reel video slot'}</strong>
+      <p>{isFr ? 'Le lecteur actuel peut être remplacé par votre Demo Reel lorsque le montage sera terminé.' : 'The current player can be replaced with your Demo Reel when the edit is finished.'}</p>
+      <code>{project.demoReelPath}</code>
+    </aside>
+  )}
+
   <!-- Barre de caractéristiques techniques (Film Specs Bar) -->
   {specs && (
     <div class="specs-ribbon" aria-label={isFr ? "Caractéristiques du film" : "Film specifications"}>
@@ -109,6 +117,12 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
           <div class="spec-item">
             <span class="spec-label">{isFr ? "Durée" : "Duration"}</span>
             <span class="spec-value">{isFr ? specs.duration.fr : specs.duration.en}</span>
+          </div>
+        )}
+        {specs.plans && (
+          <div class="spec-item">
+            <span class="spec-label">{isFr ? "Plans" : "Shots"}</span>
+            <span class="spec-value">{isFr ? specs.plans.fr : specs.plans.en}</span>
           </div>
         )}
         {specs.technique && (
@@ -173,6 +187,19 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
       )}
     </aside>
   </div>
+
+  {project.links && project.links.length > 0 && (
+    <section class="project-links-section" aria-label={isFr ? 'Documents et liens' : 'Documents and links'}>
+      <h2 class="section-heading">{isFr ? 'Documents & Liens' : 'Documents & Links'}</h2>
+      <div class="project-links-list">
+        {project.links.map((link: any) => (
+          <a href={assetUrl(link.url)} class="project-document-link" target={link.url.endsWith('.pdf') ? '_blank' : undefined} rel={link.url.endsWith('.pdf') ? 'noopener' : undefined}>
+            {isFr ? link.label.fr : link.label.en} →
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- SECTION DÉDIÉE : PIPELINE KITSU (Direction de Production) -->
   {kitsu && (
@@ -256,7 +283,7 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
           <div class="decor-card">
             <div class="decor-img-wrap">
               <picture>
-                <source srcset={item.image.replace('.jpg', '.webp')} type="image/webp" />
+                <source srcset={assetUrl(item.image.replace('.jpg', '.webp'))} type="image/webp" />
                 <img 
                   src={assetUrl(item.image)} 
                   alt={isFr ? item.title.fr : item.title.en} 
@@ -1049,4 +1076,19 @@ const visualsHeading = isFr ? "Plans clés & Extraits du film" : "Keyframes & Fi
     margin-top: 0.6rem;
     font-weight: 500;
   }
+
+  .video-slot-note,
+  .project-links-section {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .video-slot-note p { margin: 0.5rem 0; color: var(--color-muted); }
+  .video-slot-note code { font-size: 0.82rem; color: var(--color-muted); }
+  .project-links-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .project-document-link { display: inline-block; padding: 0.7rem 1rem; border: 1px solid var(--color-text); border-radius: var(--radius-sm); font-weight: 600; }
+
 </style>

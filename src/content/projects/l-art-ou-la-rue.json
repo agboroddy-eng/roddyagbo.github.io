@@ -6,7 +6,6 @@
   "slug": "l-art-ou-la-rue",
   "categories": [
     "Animation 2D",
-    "Direction artistique",
     "Storyboard & Visual Development"
   ],
   "type": "film",
@@ -27,8 +26,8 @@
   },
   "specs": {
     "duration": {
-      "en": "8 min 10 s",
-      "fr": "8 min 10 s"
+      "en": "8 min 17 s (8:17)",
+      "fr": "8 min 17 s (8:17)"
     },
     "technique": {
       "en": "Traditional 2D Digital Animation",
@@ -54,6 +53,10 @@
     "program": {
       "en": "Incub'IMA (Sèmè City & Gobelins Paris)",
       "fr": "Incub'IMA (Sèmè City & Gobelins Paris)"
+    },
+    "plans": {
+      "en": "99 shots",
+      "fr": "99 plans"
     }
   },
   "kitsu": {
@@ -273,7 +276,7 @@
     },
     {
       "role": "Durée & Format",
-      "name": "8 min 10 s — Animation traditionnelle 2D numérique (4K DCI)"
+      "name": "8 min 17 s (8:17) — 99 plans — Animation traditionnelle 2D numérique (4K DCI)"
     },
     {
       "role": "Musique originale",
@@ -388,5 +391,6 @@
       "en": "Flagship 2D animated film created under Incub'IMA (Sèmè City & Gobelins Paris). Production management, Kitsu pipeline administration, storyboard, and 2D animation by Roddy AGBO.",
       "fr": "Court métrage d'animation 2D phare réalisé dans le cadre d'Incub'IMA (Sèmè City & Gobelins Paris). Direction de production, pipeline Kitsu, storyboard et animation 2D par Roddy AGBO."
     }
-  }
+  },
+  "demoReelPath": "/assets/videos/demo-reel.mp4"
 }
