@@ -1,7 +1,7 @@
 {
   "title": {
-    "en": "Dona & Tom and The First Extraterrestrial",
-    "fr": "Dona et Tom & Le 1er Extraterrestre"
+    "en": "Dona & Tom",
+    "fr": "Dona et Tom"
   },
   "slug": "dona-et-tom",
   "categories": [
@@ -12,16 +12,16 @@
   "order": 3,
   "status": "published",
   "summary": {
-    "en": "Two illustrated children’s books for Armand Dan Éditions, built around engaging characters and accessible visual worlds for young readers.",
-    "fr": "Deux livres jeunesse illustrés pour Armand Dan Éditions, autour de personnages attachants et d’univers graphiques accessibles aux jeunes lecteurs."
+    "en": "Illustrated children’s books for Armand Dan Éditions, built around engaging characters and accessible visual worlds for young readers.",
+    "fr": "Livres jeunesse illustré pour Armand Dan Éditions, autour de personnages attachants et d’univers graphiques accessibles aux jeunes lecteurs."
   },
   "description": {
-    "en": "Editorial illustration project for author Débora Fanou and Armand Dan Éditions. I developed the characters, covers and interior illustrations for Dona & Tom and The First Extraterrestrial, building a coherent, warm and readable visual language for young readers.",
-    "fr": "Projet éditorial réalisé pour l’auteur Débora Fanou et la maison Armand Dan Éditions. J’ai développé les personnages, les couvertures et les illustrations intérieures de Dona et Tom ainsi que du 1er Extraterrestre, en construisant un langage visuel cohérent, tendre et lisible pour le jeune public."
+    "en": "Editorial illustration project for author Débora Fanou and Armand Dan Éditions. I developed the characters, covers and interior illustrations for Dona & Tom, building a coherent, warm and readable visual language for young readers.",
+    "fr": "Projet éditorial réalisé pour l’auteur Débora Fanou et la maison Armand Dan Éditions. J’ai développé les personnages, les couvertures et les illustrations intérieures de Dona et Tom, en construisant un langage visuel cohérent, tendre et lisible pour le jeune public."
   },
   "role": {
-    "en": "Illustrator & character designer: character creation, cover design and narrative interior illustrations for both books.",
-    "fr": "Illustrateur & character designer : création des personnages, conception des couvertures et réalisation des illustrations narratives intérieures pour les deux livres."
+    "en": "Illustrator & character designer: character creation, cover design and narrative interior illustrations for book.",
+    "fr": "Illustrateur & character designer : création des personnages, conception de la couvertures et réalisation des illustrations narratives intérieures du livre."
   },
   "credits": [
     {
