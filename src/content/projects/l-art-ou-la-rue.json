@@ -289,19 +289,19 @@
   ],
   "images": [
     {
-      "src": "/images/projects/l-art-ou-la-rue/cover.jpg",
-      "alt": {
-        "en": "L'art ou la rue — Key visual featuring Kodjo, Kora and Kamal with animal masks at dusk",
-        "fr": "L'art ou la rue — Visuel clé officiel présentant Kodjo, Kora et Kamal masqués au crépuscule"
-      },
-      "width": 1869,
-      "height": 1080,
-      "caption": {
-        "en": "Official Key Visual — Kodjo, Kora and Kamal at dusk overlooking Cotonou",
-        "fr": "Visuel officiel du court métrage — Kodjo, Kora et Kamal au crépuscule face à Cotonou"
-      },
-      "ratio": "16:9"
-    },
+  "src": "/images/projects/l-art-ou-la-rue/cover.jpg",
+  "alt": {
+    "en": "Official poster of L'Art ou la Rue",
+    "fr": "Affiche officielle de L'Art ou la Rue"
+  },
+  "width": 2480,
+  "height": 3508,
+  "caption": {
+    "en": "Official film poster — L'Art ou la Rue",
+    "fr": "Affiche officielle du film — L'Art ou la Rue"
+  },
+  "ratio": "3:4"
+},
     {
       "src": "/images/projects/l-art-ou-la-rue/storyboard-board.jpg",
       "alt": {
